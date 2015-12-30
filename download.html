@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 
-<html>
-
+<html lang="zh-Hans-CN" class="[類Modernizr功能支援偵測]">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Nerd2.0下载</title>
+    <title>盈财树下载</title>
     <meta charset="utf-8">
-    <meta name="keywords" content="诺品 nerd Nerd 个性化商品推荐">
-    <meta name="description" content="诺品 为你个性化推荐">
+    <meta name="keywords" content="九财 盈财树">
+    <meta name="description" content="九财 盈财树">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Nerd下载">
+    <meta name="apple-mobile-web-app-title" content="盈财树下载">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no minimal-ui">
     <script type="text/javascript" src="js/jquery/jquery-2.1.4.min.js"></script>
@@ -19,7 +18,7 @@
 		font-size: 16px;
 		line-height: 1.428571429;
 		color: #333;
-		background-color: #fff;
+		background-color: #e64e4c;
 	}
 	a{
 		text-decoration:none;
@@ -70,36 +69,41 @@
 		width:102%;
 		z-index:3;
 		height:40px;
-		background-color:rgba(0,125,0,0.95);
+		background-color:rgba(255,255,255,255);
 		word-break:break-all;
-		top:0; 
+		top:0;
+        -moz-box-shadow: 0px 2px 2px #888;  /* Gecko browsers */
+        box-shadow: 0px 2px 2px #888;   /* W3C syntax */
 	}
 	#top h1{
-		color:#FFF;
+		color:#e64e4c;
 		font-family: inherit;  		
   		line-height: 40px;
 		margin-top: 2px;
 	}
-	#downLoadI {
+
+    #mockup{
+        height:100%;
+        width:100%;
+    }
+
+    #downloadDiv {
+        position: relative;
+        margin: auto;
+        width: 38.2%;
+    }
+
+	#downloadURL {
 		display:inline-block;
+		/*
 		height:162px;
 		width:150px;
+        */
 	}
-	#downLoadI img{
-		height:100%;
-		width:100%;
-	}
-	#downLoadText{
-		display:inline-block;
-		font-size:20px;
-		font-weight:600;
-		color:#FFF;
-		background-color:#333333;
-		padding:4px 8px;
-		-moz-border-radius: 3px;      /* Gecko browsers */
-		-webkit-border-radius: 3px;   /* Webkit browsers */
-		border-radius:3px;            /* W3C syntax */
-		outline:none;
+
+	#downloadBadge{
+        display:inline-block;
+        width: 100%;
 	}
 	.hidden{
 		visibility:hidden;
@@ -132,30 +136,22 @@
 
 	
     <!--=== 顶部 在微信中显示  在其他浏览器隐藏 ===-->
-    <div id="top" class="hidden">
+    <div id="top" class="hidden ">
     	<h1>点击右上角菜单,在浏览器中打开并安装</h1>
     </div>
 	
     <div id="content" style="top:0;">
-        <div class="" >
-            <div>
-                <div class="">
-                    <h2 class="">Nerd 应用下载</h2>
-                </div>
-            </div>
-        </div>
-
         <div class="">
             <div class="">
-                <a id="downLoadI" class="downLoad" href="javascript:;" >
-                    <img src="img/logo.png" class="" >
-                </a>
+                <img id="mockup" src="img/index.png" class="" >
             </div>
         </div>
     
         <div id="" class="" style="">
-            <div class="downloadDiv">
-                <a id="downLoadText" class="downLoad" href="javascript:;">点击安装</a>
+            <div id="downloadDiv">
+                <a id="downloadURL" class="downLoad" href="javascript:;" >
+                    <img id="downloadBadge" class="downLoad" src="img/Normal_badge.png"/>
+                </a>
             </div>
             <div class="" style="text-align:center;">
                 <span id="forWhat" class=""></span>
@@ -170,9 +166,10 @@
             </div>
         </div>    
         <hr class="">
-        
+
         <div class="" style=" margin:0 auto;">
             <div class="introduce" style="">
+                <!--
                 <div class="brief">
                     <h2>应用描述</h2>
                     <p>Nerd-爱学的极客和创客</p>
@@ -183,7 +180,8 @@
                     <p>最新的行业资讯：碎片化时间也可高效率的学习</p>
                     <p>学习从点到面：完成快餐知识到全面知识的高效转化</p>
                 </div>
-                <div class="brief">
+                -->
+                <div class="brief han-init">
                     <ul>
                         <li id="versions"></li>
                         <li id="size"></li>
@@ -198,15 +196,19 @@
 
 
 <script type="text/javascript">
-	
+
+    //获取屏幕 宽度 和 高度 作为全局变量
+    var clientWidth = document.documentElement.clientWidth;
+    var clientHeight= document.documentElement.clientHeight;
+
 	function inWhere(){
 		var ua = navigator.userAgent.toLowerCase();
 		if(ua.match(/MicroMessenger/i)=="micromessenger") {
 			$("#top").removeClass("hidden");			
 			$("#content").css("top","40px");
 			var url = "javascript:alert('请点击微信右上角按钮,然后在弹出的菜单中,点击[在浏览器中打开],即可安装');";
-			$("#downLoadI,#downLoadText").attr("href",url);
-			//$("#forWhat").html("In Wechat");
+			$("#downloadURL").attr("href",url);
+			$("#forWhat").html("In Wechat");
 		} else {
 			$("#top").addClass("hidden");
 			setDownLoadUrl();//*************************************************************************
@@ -222,14 +224,16 @@
 		os.ios = os.ipad || os.iphone;
 		var url = "javascript:;";
 		if (os.ios) {			
-			//url = "http://www.wwcode.net/s/hEFed";					//版本1.0.1	14.78M
 			url = "http://itunes.apple.com/cn/app/id994059153?mt=8";	//版本1.0.0	17.4M
 			//相关文字软件信息
 			$("#forWhat").html("For iOS");
 			$("#versions").html("版本：2.0.0 ");
 			$("#size").html("大小: 17.4 M");
 			$("#datePublished").html("2015-09-17");
-		}
+            $("#downloadBadge").attr("src","img/Appstore_badge.png");
+            $("#downloadURL").attr("href",url);
+
+        }
 		else if (os.android) {			
 			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
 			//相关文字软件信息
@@ -237,7 +241,9 @@
 			$("#versions").html("版本：2.0.0 (build 4)");
 			$("#size").html("大小: 5.6 M");
 			$("#datePublished").html("2015-09-17");
-		}
+            $("#downloadBadge").attr("src","img/GooglePlay_badge.png");
+            $("#downloadURL").attr("href",url);
+        }
 		else{
 			url = "http://www.cherubime.com/";
 			$("#forWhat").html("In PC");
@@ -245,7 +251,7 @@
 			$("#size").hide();
 			$("#datePublished").hide();
 		}
-		$("#downLoadI,#downLoadText").attr("href",url);
+		$("#downloadURL").attr("href",url);
 		
 		inWhere();
 	}
