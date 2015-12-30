@@ -72,7 +72,8 @@
 		background-color:rgba(255,255,255,255);
 		word-break:break-all;
 		top:0;
-        box-shadow: 0px 2px 2px #000;
+        -moz-box-shadow: 0px 2px 2px #000;  /* Gecko browsers */
+        box-shadow: 0px 2px 2px #000;   /* W3C syntax */
 	}
 	#top h1{
 		color:#e64e4c;
@@ -87,25 +88,16 @@
 		width:150px;
         */
 	}
-	#downLoadI img{
+	#mockup{
 		height:100%;
 		width:100%;
 	}
 	#downLoadText{
-        /*background-image: ;*/
+        background-image:url(img/Normal_badge.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
 		display:inline-block;
-		font-size:20px;
-		font-weight:600;
-		color:#FFF;
-		background-color:#333333;
-		padding:4px 8px;
-		-moz-border-radius: 3px;      /* Gecko browsers */
-		-webkit-border-radius: 3px;   /* Webkit browsers */
-		border-radius:3px;            /* W3C syntax */
-		outline:none;
 	}
 	.hidden{
 		visibility:hidden;
@@ -143,27 +135,17 @@
     </div>
 	
     <div id="content" style="top:0;">
-        <!--
-        <div class="" >
-            <div>
-                <div class="">
-                    <h2 class="">Nerd 应用下载</h2>
-                </div>
-            </div>
-        </div>
-        -->
-
         <div class="">
             <div class="">
-                <a id="downLoadI" class="downLoad" href="javascript:;" >
-                    <img src="img/index.png" class="" >
-                </a>
+                <img id="mockup" src="img/index.png" class="" >
             </div>
         </div>
     
         <div id="" class="" style="">
             <div class="downloadDiv">
-                <a id="downLoadText" class="downLoad" href="javascript:;">点击安装</a>
+                <a id="downLoadI" class="downLoad" href="javascript:;" >
+                    <img id="downLoadText" class="downLoad" src="img/Normal_badge.png"/>
+                </a>
             </div>
             <div class="" style="text-align:center;">
                 <span id="forWhat" class=""></span>
@@ -232,14 +214,13 @@
 		os.ios = os.ipad || os.iphone;
 		var url = "javascript:;";
 		if (os.ios) {			
-			//url = "http://www.wwcode.net/s/hEFed";					//版本1.0.1	14.78M
 			url = "http://itunes.apple.com/cn/app/id994059153?mt=8";	//版本1.0.0	17.4M
 			//相关文字软件信息
 			$("#forWhat").html("For iOS");
 			$("#versions").html("版本：2.0.0 ");
 			$("#size").html("大小: 17.4 M");
 			$("#datePublished").html("2015-09-17");
-            $("#downLoadI,#downLoadText").css("background-image","url(img/Appstore_badge.png)");
+            $("#downLoadI,#downLoadText").css("src","url(img/Appstore_badge.png)");
 		}
 		else if (os.android) {			
 			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
@@ -248,7 +229,7 @@
 			$("#versions").html("版本：2.0.0 (build 4)");
 			$("#size").html("大小: 5.6 M");
 			$("#datePublished").html("2015-09-17");
-            $("#downLoadI,#downLoadText").css("background-image","url(img/GooglePlay_badge.png)");
+            $("#downLoadI,#downLoadText").css("src","url(img/GooglePlay_badge.png)");
 
         }
 		else{
