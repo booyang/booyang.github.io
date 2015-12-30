@@ -92,6 +92,10 @@
 		width:100%;
 	}
 	#downLoadText{
+        /*background-image: ;*/
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
 		display:inline-block;
 		font-size:20px;
 		font-weight:600;
@@ -235,6 +239,7 @@
 			$("#versions").html("版本：2.0.0 ");
 			$("#size").html("大小: 17.4 M");
 			$("#datePublished").html("2015-09-17");
+            $("#downLoadI,#downLoadText").css("background-image","url(img/Appstore_badge.png)");
 		}
 		else if (os.android) {			
 			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
@@ -243,7 +248,9 @@
 			$("#versions").html("版本：2.0.0 (build 4)");
 			$("#size").html("大小: 5.6 M");
 			$("#datePublished").html("2015-09-17");
-		}
+            $("#downLoadI,#downLoadText").css("background-image","url(img/GooglePlay_badge.png)");
+
+        }
 		else{
 			url = "http://www.cherubime.com/";
 			$("#forWhat").html("In PC");
