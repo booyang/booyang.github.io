@@ -72,8 +72,8 @@
 		background-color:rgba(255,255,255,255);
 		word-break:break-all;
 		top:0;
-        -moz-box-shadow: 0px 2px 2px #000;  /* Gecko browsers */
-        box-shadow: 0px 2px 2px #000;   /* W3C syntax */
+        -moz-box-shadow: 0px 2px 2px #888;  /* Gecko browsers */
+        box-shadow: 0px 2px 2px #888;   /* W3C syntax */
 	}
 	#top h1{
 		color:#e64e4c;
@@ -92,7 +92,7 @@
 		height:100%;
 		width:100%;
 	}
-	#downLoadBadge{
+	#downloadBadge{
         display:inline-block;
 	}
 	.hidden{
@@ -140,7 +140,7 @@
         <div id="" class="" style="">
             <div class="downloadDiv">
                 <a id="downLoadI" class="downLoad" href="javascript:;" >
-                    <img id="downLoadBadge" class="downLoad" src="img/Normal_badge.png"/>
+                    <img id="downloadBadge" class="downLoad" src="img/Normal_badge.png"/>
                 </a>
             </div>
             <div class="" style="text-align:center;">
@@ -216,7 +216,7 @@
 			$("#versions").html("版本：2.0.0 ");
 			$("#size").html("大小: 17.4 M");
 			$("#datePublished").html("2015-09-17");
-            $("#downLoadI,#downLoadBadge").css("src","url(img/Appstore_badge.png)");
+            $("#downLoadI,#downloadBadge").css("src","url(img/Appstore_badge.png)");
 		}
 		else if (os.android) {			
 			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
@@ -225,7 +225,7 @@
 			$("#versions").html("版本：2.0.0 (build 4)");
 			$("#size").html("大小: 5.6 M");
 			$("#datePublished").html("2015-09-17");
-            $("#downLoadI,#downLoadBadge").css("src","url(img/GooglePlay_badge.png)");
+            $("#downLoadI,#downloadBadge").css("src","url(img/GooglePlay_badge.png)");
 
         }
 		else{
