@@ -90,7 +90,7 @@
     #downloadDiv {
         position: relative;
         margin: auto;
-        width:60%;
+        width: 38.2%;
     }
 
 	#downloadURL {
@@ -166,7 +166,7 @@
             </div>
         </div>    
         <hr class="">
-        
+
         <div class="" style=" margin:0 auto;">
             <div class="introduce" style="">
                 <!--
@@ -196,7 +196,11 @@
 
 
 <script type="text/javascript">
-	
+
+    //获取屏幕 宽度 和 高度 作为全局变量
+    var clientWidth = document.documentElement.clientWidth;
+    var clientHeight= document.documentElement.clientHeight;
+
 	function inWhere(){
 		var ua = navigator.userAgent.toLowerCase();
 		if(ua.match(/MicroMessenger/i)=="micromessenger") {
