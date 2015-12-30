@@ -92,12 +92,8 @@
 		height:100%;
 		width:100%;
 	}
-	#downLoadText{
-        background-image:url(img/Normal_badge.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-		display:inline-block;
+	#downLoadBadge{
+        display:inline-block;
 	}
 	.hidden{
 		visibility:hidden;
@@ -144,7 +140,7 @@
         <div id="" class="" style="">
             <div class="downloadDiv">
                 <a id="downLoadI" class="downLoad" href="javascript:;" >
-                    <img id="downLoadText" class="downLoad" src="img/Normal_badge.png"/>
+                    <img id="downLoadBadge" class="downLoad" src="img/Normal_badge.png"/>
                 </a>
             </div>
             <div class="" style="text-align:center;">
@@ -197,7 +193,7 @@
 			$("#top").removeClass("hidden");			
 			$("#content").css("top","40px");
 			var url = "javascript:alert('请点击微信右上角按钮,然后在弹出的菜单中,点击[在浏览器中打开],即可安装');";
-			$("#downLoadI,#downLoadText").attr("href",url);
+			$("#downLoadI").attr("href",url);
 			$("#forWhat").html("In Wechat");
 		} else {
 			$("#top").addClass("hidden");
@@ -220,7 +216,7 @@
 			$("#versions").html("版本：2.0.0 ");
 			$("#size").html("大小: 17.4 M");
 			$("#datePublished").html("2015-09-17");
-            $("#downLoadI,#downLoadText").css("src","url(img/Appstore_badge.png)");
+            $("#downLoadI,#downLoadBadge").css("src","url(img/Appstore_badge.png)");
 		}
 		else if (os.android) {			
 			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
@@ -229,7 +225,7 @@
 			$("#versions").html("版本：2.0.0 (build 4)");
 			$("#size").html("大小: 5.6 M");
 			$("#datePublished").html("2015-09-17");
-            $("#downLoadI,#downLoadText").css("src","url(img/GooglePlay_badge.png)");
+            $("#downLoadI,#downLoadBadge").css("src","url(img/GooglePlay_badge.png)");
 
         }
 		else{
@@ -239,7 +235,7 @@
 			$("#size").hide();
 			$("#datePublished").hide();
 		}
-		$("#downLoadI,#downLoadText").attr("href",url);
+		$("#downLoadI").attr("href",url);
 		
 		inWhere();
 	}
