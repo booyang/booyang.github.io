@@ -1,90 +1,30 @@
 <!DOCTYPE html>
 
 <html>
-<script type="text/javascript">
 
-	function inWhere(){
-		var ua = navigator.userAgent.toLowerCase();
-		if(ua.match(/MicroMessenger/i)=="micromessenger") {
-			$("#top").removeClass("hidden");
-			$("#content").css("top","40px");
-			var url = "javascript:alert('请点击微信右上角按钮,然后在弹出的菜单中,点击[在浏览器中打开],即可安装');";
-			$("#downLoadI,#downLoadText").attr("href",url);
-			//$("#forWhat").html("In Wechat");
-		} else {
-			$("#top").addClass("hidden");
-			setDownLoadUrl();//*************************************************************************
-		}
-	}
-
-	function setDownLoadUrl(){
-		var ua = window.navigator.userAgent;
-		var os = {};
-		os.android = ua.match(/(Android)\s+([\d.]+)/) || ua.match(/Silk-Accelerated/) ? true : false;
-		os.ipad = ua.match(/(iPad).*OS\s([\d_]+)/) ? true : false;
-		os.iphone = !os.ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/) ? true : false;
-		os.ios = os.ipad || os.iphone;
-		var url = "javascript:;";
-		if (os.ios) {
-			//url = "http://www.wwcode.net/s/hEFed";					//版本1.0.1	14.78M
-			url = "http://itunes.apple.com/cn/app/id994059153?mt=8";	//版本1.0.0	17.4M
-			//相关文字软件信息
-			$("#forWhat").html("For iOS");
-			$("#versions").html("版本：2.0.0 ");
-			$("#size").html("大小: 17.4 M");
-			$("#datePublished").html("2015-09-17");
-		}
-		else if (os.android) {
-			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
-			//相关文字软件信息
-			$("#forWhat").html("For Android");
-			$("#versions").html("版本：2.0.0 (build 4)");
-			$("#size").html("大小: 5.6 M");
-			$("#datePublished").html("2015-09-17");
-		}
-		else{
-			url = "http://www.cherubime.com/";
-			$("#forWhat").html("In PC");
-			$("#versions").hide();
-			$("#size").hide();
-			$("#datePublished").hide();
-		}
-		$("#downLoadI,#downLoadText").attr("href",url);
-
-		inWhere();
-	}
-
-	//运行时加载该函数	先判断是什么机型 加载相关信息 在判断是在微信还是在浏览器
-	setDownLoadUrl();
-
-</script>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>盈财树下载</title>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nerd2.0下载</title>
     <meta charset="utf-8">
-    <meta name="keywords" content="盈财树">
-    <meta name="description" content="安心之选,盈钱成树">
+    <meta name="keywords" content="诺品 nerd Nerd 个性化商品推荐">
+    <meta name="description" content="诺品 为你个性化推荐">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="盈财树下载">
+    <meta name="apple-mobile-web-app-title" content="Nerd下载">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no minimal-ui">
     <script type="text/javascript" src="js/jquery/jquery-2.1.4.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="img/nerd_favicon.ico">
     <style type="text/css">
-	body    {
+	body{
 		font-family: 'Helvetica Neue', Helvetica, 'Trebuchet MS', Arial, sans-serif;
 		font-size: 16px;
 		line-height: 1.428571429;
 		color: #333;
-		background-color: #e64e4c;
+		background-color: #fff;
 	}
-
 	a{
 		text-decoration:none;
 		outline:none;
 	}
-
 	p{
 		display: block;
 		-webkit-margin-before: 0.3em;
@@ -93,7 +33,6 @@
 		-webkit-margin-end: 0px;
 		font-size:14px;	
 	}
-
 	div{
 		position:relative;
 		margin:2px 0;
@@ -101,7 +40,6 @@
 		outline:none;
 		text-align:center;
 	}
-
 	h1, h2 {
 		margin-top: 5px;
 		margin-bottom: 5px;
@@ -111,7 +49,6 @@
 		line-height: 1.1;
 		color: inherit;
 	}
-
 	ul{display: block;
 		list-style-type: disc;
 		-webkit-margin-before: 1em;
@@ -120,7 +57,6 @@
 		-webkit-margin-end: 0px;
 		-webkit-padding-start: 40px;
 	}
-
 	#top{
 		-webkit-transition:all 1.5s ease-in;
 		-moz-transition:all 1.5s ease-in;
@@ -138,25 +74,21 @@
 		word-break:break-all;
 		top:0; 
 	}
-
 	#top h1{
 		color:#FFF;
 		font-family: inherit;  		
   		line-height: 40px;
 		margin-top: 2px;
 	}
-
 	#downLoadI {
 		display:inline-block;
-		/*height:162px;
-		width:150px;*/
+		height:162px;
+		width:150px;
 	}
-
 	#downLoadI img{
 		height:100%;
 		width:100%;
 	}
-
 	#downLoadText{
 		display:inline-block;
 		font-size:20px;
@@ -169,12 +101,10 @@
 		border-radius:3px;            /* W3C syntax */
 		outline:none;
 	}
-
 	.hidden{
 		visibility:hidden;
 		opacity:0;
 	}
-
 	.brief{
 		margin:0 auto;
 		padding:0;
@@ -184,7 +114,6 @@
 	a:focus , div:focus {
 		outline: none;
 	}
-
 	.introduce{
 		margin:10px auto;
 		width:90%;
@@ -192,7 +121,6 @@
 		border:#DFDFDF solid 1px;
 		padding: 0 5px;
 	}
-
 	#QR{
 		width:150px;
 		height: 150px;		
@@ -200,7 +128,7 @@
 	</style>
 </head>	
 
-<body style="padding:0; margin:0;" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+<body style="padding:0; margin:0;"  ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
 
 	
     <!--=== 顶部 在微信中显示  在其他浏览器隐藏 ===-->
@@ -210,18 +138,17 @@
 	
     <div id="content" style="top:0;">
         <div class="" >
-            <!--<div>
+            <div>
                 <div class="">
-                    <h2 class="">盈财树下载</h2>
+                    <h2 class="">Nerd 应用下载</h2>
                 </div>
             </div>
         </div>
-        -->
 
         <div class="">
             <div class="">
                 <a id="downLoadI" class="downLoad" href="javascript:;" >
-					<img src="img/index.png" class="" >
+                    <img src="img/logo.png" class="" >
                 </a>
             </div>
         </div>
@@ -234,7 +161,7 @@
                 <span id="forWhat" class=""></span>
             </div>
         </div>    
-        <!--<hr class=""> -->
+        <hr class="">
     
         <div id="" class="">
             <div class="">
@@ -243,7 +170,7 @@
             </div>
         </div>    
         <hr class="">
-
+        
         <div class="" style=" margin:0 auto;">
             <div class="introduce" style="">
                 <div class="brief">
@@ -270,6 +197,62 @@
 </body>
 
 
-
+<script type="text/javascript">
+	
+	function inWhere(){
+		var ua = navigator.userAgent.toLowerCase();
+		if(ua.match(/MicroMessenger/i)=="micromessenger") {
+			$("#top").removeClass("hidden");			
+			$("#content").css("top","40px");
+			var url = "javascript:alert('请点击微信右上角按钮,然后在弹出的菜单中,点击[在浏览器中打开],即可安装');";
+			$("#downLoadI,#downLoadText").attr("href",url);
+			//$("#forWhat").html("In Wechat");
+		} else {
+			$("#top").addClass("hidden");
+			setDownLoadUrl();//*************************************************************************
+		}		
+	}
+	
+	function setDownLoadUrl(){
+		var ua = window.navigator.userAgent;
+		var os = {};
+		os.android = ua.match(/(Android)\s+([\d.]+)/) || ua.match(/Silk-Accelerated/) ? true : false;
+		os.ipad = ua.match(/(iPad).*OS\s([\d_]+)/) ? true : false;
+		os.iphone = !os.ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/) ? true : false;
+		os.ios = os.ipad || os.iphone;
+		var url = "javascript:;";
+		if (os.ios) {			
+			//url = "http://www.wwcode.net/s/hEFed";					//版本1.0.1	14.78M
+			url = "http://itunes.apple.com/cn/app/id994059153?mt=8";	//版本1.0.0	17.4M
+			//相关文字软件信息
+			$("#forWhat").html("For iOS");
+			$("#versions").html("版本：2.0.0 ");
+			$("#size").html("大小: 17.4 M");
+			$("#datePublished").html("2015-09-17");
+		}
+		else if (os.android) {			
+			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
+			//相关文字软件信息
+			$("#forWhat").html("For Android");
+			$("#versions").html("版本：2.0.0 (build 4)");
+			$("#size").html("大小: 5.6 M");
+			$("#datePublished").html("2015-09-17");
+		}
+		else{
+			url = "http://www.cherubime.com/";
+			$("#forWhat").html("In PC");
+			$("#versions").hide();
+			$("#size").hide();
+			$("#datePublished").hide();
+		}
+		$("#downLoadI,#downLoadText").attr("href",url);
+		
+		inWhere();
+	}
+	
+	//运行时加载该函数	先判断是什么机型 加载相关信息 在判断是在微信还是在浏览器
+	setDownLoadUrl();
+	
+</script>
 
 </html>
