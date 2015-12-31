@@ -72,6 +72,7 @@
 		background-color:rgba(255,255,255,255);
 		word-break:break-all;
 		top:0;
+        -webkit-box-shadow: 0px 2px 2px #888;   /* webkit browsers*/
         -moz-box-shadow: 0px 2px 2px #888;  /* Gecko browsers */
         box-shadow: 0px 2px 2px #888;   /* W3C syntax */
 	}
@@ -83,9 +84,8 @@
 	}
 
     #mockup{
-        height:100%;
         width:100%;
-    }
+	}
 
     #downloadDiv {
         position: relative;
@@ -142,21 +142,25 @@
 	
     <div id="content" style="top:0;">
         <div class="">
-            <div class="">
-                <img id="mockup" src="img/index.png" class="" >
+            <div class="" style="">
+                <img id="mockup" src="" class="" >
             </div>
         </div>
     
         <div id="" class="" style="">
             <div id="downloadDiv">
                 <a id="downloadURL" class="downLoad" href="javascript:;" >
-                    <img id="downloadBadge" class="downLoad" src="img/Normal_badge.png"/>
+                    <img id="downloadBadge" class="downLoad" src=""/>
                 </a>
             </div>
+            <!--
             <div class="" style="text-align:center;">
                 <span id="forWhat" class=""></span>
             </div>
-        </div>    
+            -->
+        </div>
+
+        <!--
         <hr class="">
     
         <div id="" class="">
@@ -169,19 +173,11 @@
 
         <div class="" style=" margin:0 auto;">
             <div class="introduce" style="">
-                <!--
                 <div class="brief">
                     <h2>应用描述</h2>
-                    <p>Nerd-爱学的极客和创客</p>
-                    <p>科技飞速发展，信息量爆棚，Nerd帮你找到真金、读到好内容</p>
-                    <p>个人模型建立完全不侵犯个人隐私的建立个人模型，你仅仅是你！</p>
-                    <p>个性化图书推荐：在这里让你不错过每本书，世界上很多属于你的书正在等待你的来临</p>
-                    <p>快速知识学习：所有人都可以成为一个Nerd，只是需要的知识没有飞过来</p>
-                    <p>最新的行业资讯：碎片化时间也可高效率的学习</p>
-                    <p>学习从点到面：完成快餐知识到全面知识的高效转化</p>
+                    <p>盈钱树</p>
                 </div>
-                -->
-                <div class="brief han-init">
+                                <div class="brief han-init">
                     <ul>
                         <li id="versions"></li>
                         <li id="size"></li>
@@ -190,7 +186,7 @@
                 </div>
             </div>
         </div>
-
+        -->
     </div>
 </body>
 
@@ -224,29 +220,33 @@
 		os.ios = os.ipad || os.iphone;
 		var url = "javascript:;";
 		if (os.ios) {			
-			url = "http://itunes.apple.com/cn/app/id994059153?mt=8";	//版本1.0.0	17.4M
+			url = "https://itunes.apple.com/cn/app/wei/id414478124";	//Appstore下载链接
 			//相关文字软件信息
 			$("#forWhat").html("For iOS");
 			$("#versions").html("版本：2.0.0 ");
 			$("#size").html("大小: 17.4 M");
 			$("#datePublished").html("2015-09-17");
             $("#downloadBadge").attr("src","img/Appstore_badge.png");
+            $("#mockup").attr("src","img/iphone_6_mockup.png");
             $("#downloadURL").attr("href",url);
 
         }
 		else if (os.android) {			
-			url = "http://cherubim.ufile.ucloud.com.cn/app/android/nerd_cherubim_1-0-2.apk";
+			url = "http://dldir1.qq.com/weixin/android/weixin638android680.apk";
 			//相关文字软件信息
 			$("#forWhat").html("For Android");
 			$("#versions").html("版本：2.0.0 (build 4)");
 			$("#size").html("大小: 5.6 M");
 			$("#datePublished").html("2015-09-17");
             $("#downloadBadge").attr("src","img/GooglePlay_badge.png");
+            $("#mockup").attr("src","img/nexus_5_mockup.png");
             $("#downloadURL").attr("href",url);
         }
 		else{
 			url = "http://www.cherubime.com/";
 			$("#forWhat").html("In PC");
+            $("#mockup").attr("src","img/pc_mockup.png");
+            $("#downloadBadge").attr("src","img/Normal_badge.png");
 			$("#versions").hide();
 			$("#size").hide();
 			$("#datePublished").hide();
