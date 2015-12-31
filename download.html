@@ -210,7 +210,11 @@
 			setDownLoadUrl();//*************************************************************************
 		}		
 	}
-	
+	function mask() {
+        $("#mask")
+
+
+    }
 	function setDownLoadUrl(){
 		var ua = window.navigator.userAgent;
 		var os = {};
@@ -232,7 +236,7 @@
 
         }
 		else if (os.android) {			
-			url = "http://dldir1.qq.com/weixin/android/weixin638android680.apk";    //GooglePlay下载地址
+			url = "https://play.google.com/store/apps/details?id=com.tencent.mm";    //GooglePlay下载地址
 			//相关文字软件信息
 			$("#forWhat").html("For Android");
 			$("#versions").html("版本：2.0.0 (build 4)");
