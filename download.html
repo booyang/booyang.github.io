@@ -89,7 +89,9 @@
         width: 61.8%;
         margin-left: 30%;
     }
+
     #mockup{
+        margin-top: -20px;
         width:100%;
 	}
 
@@ -208,7 +210,8 @@
             url = "https://play.google.com/store/apps/details?id=com.tencent.mm";    //GooglePlay下载地址
             urlPreferred = "https://itunes.apple.com/cn/app/wei/id414478124";	//Appstore下载链接
 			$("#forWhat").html("For iOS");
-            $("#downloadBadge").attr("src","img/Appstore_badge.png");   //iOS平台下载按钮
+            $("#downloadBadgePreferred").attr("src","img/Appstore_badge.png");   //Android平台下载按钮
+            $("#downloadBadge").attr("src","img/GooglePlay_badge.png");   //iOS平台下载按钮
             $("#mockup").attr("src","img/iphone_6_mockup.png");   //iOS Mockup
             $("#downloadURLPreferred").attr("href",urlPreferred);
             $("#downloadURL").attr("href",url);
