@@ -65,6 +65,8 @@
 		position:fixed;
 		top:0;
         bottom:0;
+        margin-top: 0;
+        margin-bottom: 0;
 		width:auto;
 		z-index:3;
 		background-color: rgba(0, 0, 0, 0.75);
@@ -73,12 +75,11 @@
         -moz-box-shadow: 0px 2px 2px #CCC;
         box-shadow: 0px 2px 2px #CCC;*/
 	}
-	#requestBrowser{
-        right:0;
-        top:0;
-        width: 25%;
-	}
 
+    #requestBrowser{
+        width: 25%;
+        margin-left: 80%;
+    }
     #mockup{
         width:100%;
 	}
@@ -133,9 +134,7 @@
 	
     <!--=== 顶部 在微信中显示  在其他浏览器隐藏 ===-->
     <div id="top" class="hidden">
-        <div id="requestBrowser">
-		    <img src="img/hiddenRightTop.png">
-        </div>
+        <img src="img/hiddenRightTop.png" id="requestBrowser">
     </div>
 	
     <div id="content" style="top:0;">
