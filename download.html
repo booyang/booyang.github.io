@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="zh-Hans-CN" class="[類Modernizr功能支援偵測]">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>盈财树下载</title>
     <meta charset="utf-8">
     <meta name="keywords" content="九财 盈财树">
@@ -23,10 +25,12 @@
 		color: #333;
 		background-color: #e64e4c;
 	}
+
 	a{
 		text-decoration:none;
 		outline:none;
 	}
+
 	p{
 		display: block;
 		-webkit-margin-before: 0.3em;
@@ -35,6 +39,7 @@
 		-webkit-margin-end: 0px;
 		font-size:14px;	
 	}
+
 	div{
 		position:relative;
 		margin:2px 0;
@@ -42,6 +47,7 @@
 		outline:none;
 		text-align:center;
 	}
+
 	h1, h2 {
 		margin-top: 5px;
 		margin-bottom: 5px;
@@ -51,6 +57,7 @@
 		line-height: 1.1;
 		color: inherit;
 	}
+
 	ul{display: block;
 		list-style-type: disc;
 		-webkit-margin-before: 1em;
@@ -59,6 +66,7 @@
 		-webkit-margin-end: 0px;
 		-webkit-padding-start: 40px;
 	}
+
 	#top{
 		-webkit-transition:all 1.5s ease-in;
 		-moz-transition:all 1.5s ease-in;
@@ -89,18 +97,37 @@
 
     #downloadDiv {
         position: relative;
+        float: left;
         margin: auto;
-        width: 38.2%;
+        width: 50%;
+    }
+
+    #downloadDivPreferred {
+        position: relative;
+        float: right;
+        margin: auto;
+        width: 50%;
     }
 
 	#downloadURL {
 		display:inline-block;
 	}
 
-	#downloadBadge{
+    #downloadURLPreferred {
         display:inline-block;
-        width: 100%;
+    }
+
+	#downloadBadge {
+        display:inline-block;
+        margin:0 auto;
+        width: 61.8%;
 	}
+
+    #downloadBadgePreferred {
+        display:inline-block;
+        margin:0 auto;
+        width: 61.8%;
+    }
 
 	.hidden{
 		visibility:hidden;
@@ -121,24 +148,33 @@
 	
     <!--=== 顶部 在微信中显示  在其他浏览器隐藏 ===-->
     <div id="top" class="hidden">
-        <img src="img/hiddenRightTop.png" id="requestBrowser">
+        <img id="requestBrowser" src="img/hiddenRightTop.png">
     </div>
 	
     <div id="content" style="top:0;">
+
         <div class="">
             <div class="" style="">
                 <img id="mockup" src="" class="" >
             </div>
         </div>
-    
+
         <div id="" class="" style="">
             <div id="downloadDiv">
                 <a id="downloadURL" class="downLoad" href="javascript:;" >
                     <img id="downloadBadge" class="downLoad" src=""/>
                 </a>
             </div>
+            <div id="downloadDivPreferred">
+                <a id="downloadURLPreferred" class="downLoad" href="javascript:;" >
+                    <img id="downloadBadgePreferred" class="downLoad" src=""/>
+                </a>
+            </div>
         </div>
+
     </div>
+
+
 </body>
 
 <!--================================================脚本区================================================-->
@@ -149,7 +185,7 @@
     var clientWidth = document.documentElement.clientWidth;
     var clientHeight= document.documentElement.clientHeight;
 
-    //判断是否在微信,是否显示遮罩层,是否修改按钮为警告弹窗
+    //判断是否在微信,是否显示遮罩层,是否修改按钮链接为警告弹窗
 	function inWhere(){
 		var ua = navigator.userAgent.toLowerCase();
 		if(ua.match(/MicroMessenger/i)=="micromessenger") {
@@ -172,31 +208,41 @@
 		os.ipad = ua.match(/(iPad).*OS\s([\d_]+)/) ? true : false;
 		os.iphone = !os.ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/) ? true : false;
 		os.ios = os.ipad || os.iphone;
-		var url = "javascript:;";
-		if (os.ios) {			
-			url = "https://itunes.apple.com/cn/app/wei/id414478124";	//Appstore下载链接
-			//相关文字软件信息
-			$("#forWhat").html("For iOS");
-            $("#downloadBadge").attr("src","img/Appstore_badge.png");
-            $("#mockup").attr("src","img/iphone_6_mockup.png");
-            $("#downloadURL").attr("href",url);
+		var urlPreferred = "javascript:;";
+        var url = "javascript:;";
 
-        }
-		else if (os.android) {			
-			url = "https://play.google.com/store/apps/details?id=com.tencent.mm";    //GooglePlay下载地址
-			$("#forWhat").html("For Android");
-            $("#downloadBadge").attr("src","img/GooglePlay_badge.png");
-            $("#mockup").attr("src","img/nexus_5_mockup.png");
+        if (os.ios) {
+            url = "https://play.google.com/store/apps/details?id=com.tencent.mm";    //GooglePlay下载地址
+            urlPreferred = "https://itunes.apple.com/cn/app/wei/id414478124";	//Appstore下载链接
+			$("#forWhat").html("For iOS");
+            $("#downloadBadge").attr("src","img/Appstore_badge.png");   //iOS平台下载按钮
+            $("#mockup").attr("src","img/iphone_6_mockup.png");   //iOS Mockup
+            $("#downloadURLPreferred").attr("href",urlPreferred);
             $("#downloadURL").attr("href",url);
         }
+
+		else if (os.android) {			
+			urlPreferred = "https://play.google.com/store/apps/details?id=com.tencent.mm";    //GooglePlay下载地址
+            url = "https://itunes.apple.com/cn/app/wei/id414478124";	//Appstore下载链接
+            $("#forWhat").html("For Android");
+            $("#downloadBadgePreferred").attr("src","img/GooglePlay_badge.png");   //Android平台下载按钮
+            $("#downloadBadge").attr("src","img/Appstore_badge.png");   //Android平台下载按钮
+            $("#mockup").attr("src","img/nexus_5_mockup.png");   //Android Mockup
+            $("#downloadURLPreferred").attr("href",urlPreferred);
+            $("#downloadURL").attr("href",url);
+        }
+
 		else{
 			url = "http://wx.qq.com/";
 			$("#forWhat").html("In PC");
-            $("#downloadBadge").attr("src","img/Normal_badge.png");
-            $("#mockup").attr("src","img/pc_mockup.png");
+            $("#downloadBadgePreferred").attr("src","img/GooglePlay_badge.png");   //Android平台下载按钮
+            $("#downloadBadge").attr("src","img/Normal_badge.png");   //缺省下载按钮
+            $("#mockup").attr("src","img/pc_mockup.png");   //缺省 Mockup
 
         }
-		$("#downloadURL").attr("href",url);
+
+        $("#downloadURLPreferred").attr("href",urlPreferred);
+        $("#downloadURL").attr("href",url);
 		
 		inWhere();
 	}
