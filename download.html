@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no minimal-ui">
     <script type="text/javascript" src="js/jquery/jquery-2.1.4.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="img/nerd_favicon.ico">
+
+    <!--================================================样式区================================================-->
+
     <style type="text/css">
 	body{
 		font-family: 'Helvetica Neue', Helvetica, 'Trebuchet MS', Arial, sans-serif;
@@ -74,15 +77,11 @@
 		width:100%;
 		z-index:3;
 		background-color: rgba(0, 0, 0, 0.75);
-
-        /*-webkit-box-shadow: 0px 2px 2px #CCC;
-        -moz-box-shadow: 0px 2px 2px #CCC;
-        box-shadow: 0px 2px 2px #CCC;*/
 	}
 
     #requestBrowser{
         width: 61.8%;
-        margin-left: 35%;
+        margin-left: 30%;
     }
     #mockup{
         width:100%;
@@ -102,31 +101,20 @@
         display:inline-block;
         width: 100%;
 	}
+
 	.hidden{
 		visibility:hidden;
 		opacity:0;
 	}
-	.brief{
-		margin:0 auto;
-		padding:0;
-		text-align:left;
-	}
-	a:focus , div:focus {
+
+    a:focus , div:focus {
 		outline: none;
 	}
-	.introduce{
-		margin:10px auto;
-		width:90%;
-		background-color:#F4F4F4;
-		border:#DFDFDF solid 1px;
-		padding: 0 5px;
-	}
-	#QR{
-		width:150px;
-		height: 150px;		
-	}
+
 	</style>
-</head>	
+</head>
+
+<!--================================================结构区================================================-->
 
 <body style="padding:0; margin:0;"  ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
 
@@ -153,6 +141,7 @@
     </div>
 </body>
 
+<!--================================================脚本区================================================-->
 
 <script type="text/javascript">
 
@@ -160,6 +149,7 @@
     var clientWidth = document.documentElement.clientWidth;
     var clientHeight= document.documentElement.clientHeight;
 
+    //判断是否在微信,是否显示遮罩层,是否修改按钮为警告弹窗
 	function inWhere(){
 		var ua = navigator.userAgent.toLowerCase();
 		if(ua.match(/MicroMessenger/i)=="micromessenger") {
@@ -174,6 +164,7 @@
 		}		
 	}
 
+    //判断平台为Android或iOS,设置下载页显示机型,下载按钮显示顺序,下载按钮链接
 	function setDownLoadUrl(){
 		var ua = window.navigator.userAgent;
 		var os = {};
@@ -186,9 +177,6 @@
 			url = "https://itunes.apple.com/cn/app/wei/id414478124";	//Appstore下载链接
 			//相关文字软件信息
 			$("#forWhat").html("For iOS");
-			$("#versions").html("版本：2.0.0 ");
-			$("#size").html("大小: 17.4 M");
-			$("#datePublished").html("2015-09-17");
             $("#downloadBadge").attr("src","img/Appstore_badge.png");
             $("#mockup").attr("src","img/iphone_6_mockup.png");
             $("#downloadURL").attr("href",url);
@@ -196,24 +184,18 @@
         }
 		else if (os.android) {			
 			url = "https://play.google.com/store/apps/details?id=com.tencent.mm";    //GooglePlay下载地址
-			//相关文字软件信息
 			$("#forWhat").html("For Android");
-			$("#versions").html("版本：2.0.0 (build 4)");
-			$("#size").html("大小: 5.6 M");
-			$("#datePublished").html("2015-09-17");
             $("#downloadBadge").attr("src","img/GooglePlay_badge.png");
             $("#mockup").attr("src","img/nexus_5_mockup.png");
             $("#downloadURL").attr("href",url);
         }
 		else{
-			url = "http://www.cherubime.com/";
+			url = "http://wx.qq.com/";
 			$("#forWhat").html("In PC");
-            $("#mockup").attr("src","img/pc_mockup.png");
             $("#downloadBadge").attr("src","img/Normal_badge.png");
-			$("#versions").hide();
-			$("#size").hide();
-			$("#datePublished").hide();
-		}
+            $("#mockup").attr("src","img/pc_mockup.png");
+
+        }
 		$("#downloadURL").attr("href",url);
 		
 		inWhere();
