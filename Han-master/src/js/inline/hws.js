@@ -4,101 +4,115 @@ define([
   '../regex'
 ], function( Han, $ ) {
 
-var QUERY_HWS_AS_FIRST_CHILD = '* > h-hws:first-child, * > wbr:first-child + h-hws, wbr:first-child + wbr + h-hws'
+var hws = '<<hws>>'
 
-//// Disabled `Node.normalize()` for temp due to
-//// issue below in IE11.
-//// See: http://stackoverflow.com/questions/22337498/why-does-ie11-handle-node-normalize-incorrectly-for-the-minus-symbol
-var isNodeNormalizeNormal = (function() {
-  var div = $.create( 'div' )
+var $hws = $.create( 'h-hws' )
+$hws.setAttribute( 'hidden', '' )
+$hws.innerHTML = ' '
 
-  div.appendChild( $.create( '', '0-' ))
-  div.appendChild( $.create( '', '2' ))
-  div.normalize()
+function sharingSameParent( $a, $b ) {
+  return $a && $b && $a.parentNode === $b.parentNode
+}
 
-  return div.firstChild.length !== 2
-})()
+function properlyPlaceHWSBehind( $node, text ) {
+  var $elmt = $node
+  var text  = text || ''
 
-var hws = $.create( 'h-hws' )
-hws.setAttribute( 'hidden', '' )
-hws.innerHTML = ' '
+  if (
+    $.isElmt( $node.nextSibling ) ||
+    sharingSameParent( $node, $node.nextSibling )
+  ) {
+    return text + hws
+  } else {
+    // One of the parental elements of the current text
+    // node would definitely have a next sibling, since
+    // it is of the first portion and not `isEnd`.
+    while ( !$elmt.nextSibling ) {
+      $elmt = $elmt.parentNode
+    }
+    if ( $node !== $elmt ) {
+      $elmt.insertAdjacentHTML( 'afterEnd', '<h-hws hidden> </h-hws>' )
+    }
+  }
+  return text
+}
+
+function firstStepLabel( portion, mat ) {
+  return portion.isEnd && portion.index === 0
+    ? mat[1] + hws + mat[2]
+    : portion.index === 0
+    ? properlyPlaceHWSBehind( portion.node, portion.text )
+    : portion.text
+}
+
+function real$hwsElmt( portion ) {
+  return portion.index === 0
+    ? $.clone( $hws )
+    : ''
+}
+
+var last$hwsIdx
+
+function apostrophe( portion ) {
+  var $elmt = portion.node.parentNode
+
+  if ( portion.index === 0 ) {
+    last$hwsIdx = portion.endIndexInNode-2
+  }
+
+  if (
+    $elmt.nodeName.toLowerCase() === 'h-hws' && (
+    portion.index === 1 || portion.indexInMatch === last$hwsIdx
+  )) {
+    $elmt.classList.add( 'quote-inner' )
+  }
+  return portion.text
+}
+
+function curveQuote( portion ) {
+  var $elmt = portion.node.parentNode
+
+  if ( $elmt.nodeName.toLowerCase() === 'h-hws' ) {
+    $elmt.classList.add( 'quote-outer' )
+  }
+  return portion.text
+}
 
 $.extend( Han, {
-  isNodeNormalizeNormal: isNodeNormalizeNormal,
-
   renderHWS: function( context, strict ) {
-    var context = context || document
+    // Elements to be filtered according to the
+    // HWS rendering mode.
+    var AVOID = strict
+    ? 'textarea, code, kbd, samp, pre'
+    : 'textarea'
+
     var mode = strict ? 'strict' : 'base'
+    var context = context || document
     var finder = Han.find( context )
 
-    // Elements to be filtered according to the
-    // HWS rendering mode
-    if ( strict ) {
-      finder.avoid( 'textarea, code, kbd, samp, pre' )
-    } else {
-      finder.avoid( 'textarea' )
-    }
-
     finder
-    .replace( Han.TYPESET.hws[ mode ][0], '$1<hws/>$2' )
-    .replace( Han.TYPESET.hws[ mode ][1], '$1<hws/>$2' )
+    .avoid( AVOID )
 
-    // Deal with [' 字'], [" 字"] => ['字'], ["字"]
-    .replace( /(['"]+)<hws\/>(.+?)<hws\/>\1/ig, '$1$2$1' )
+    // Basic situations:
+    // - 字a => 字<hws/>a
+    // - A字 => A<hws/>字
+    .replace( Han.TYPESET.hws[ mode ][0], firstStepLabel )
+    .replace( Han.TYPESET.hws[ mode ][1], firstStepLabel )
 
-    // Remove all `<hws/>` pre/post [“字”] and [‘字’]
-    // See: https://github.com/ethantw/Han/issues/59
-    .replace( /<hws\/>([‘“]+)/ig, '$1' )
-    .replace( /([’”]+)<hws\/>/ig, '$1' )
-
-    // Convert text nodes `<hws/>` into real element nodes
-    .replace( '<hws/>', function() {
-      return $.clone( hws )
-    })
+    // Convert text nodes `<hws/>` into real element nodes:
+    .replace( new RegExp( '(' + hws + ')+', 'g' ), real$hwsElmt )
 
     // Deal with:
-    // `漢<u><hws/>zi</u>` => `漢<hws/><u>zi</u>`
-    $
-    .qsa( QUERY_HWS_AS_FIRST_CHILD, context )
-    .forEach(function( firstChild ) {
-      var parent = firstChild.parentNode
-      var target = parent.firstChild
+    // - '<hws/>字<hws/>' => '字'
+    // - "<hws/>字<hws/>" => "字"
+    .replace( /([\'"])\s(.+?)\s\1/g, apostrophe )
 
-      // Skip all `<wbr>` and comments
-      while ( $.isIgnorable( target )) {
-        target = target.nextSibling
-
-        if ( !target ) return
-      }
-
-      // The ‘first-child’ of DOM is different from
-      // the ones of QSA, could be either an element
-      // or a text fragment, but the latter one is
-      // not what we want. We don't want comments,
-      // either.
-      while ( target.nodeName === 'H-HWS' ) {
-        $.remove( target, parent )
-
-        target = parent.parentNode.insertBefore( $.clone( hws ), parent )
-        parent = parent.parentNode
-
-        if ( isNodeNormalizeNormal ) {
-          parent.normalize()
-        }
-
-        // This is for extreme circumstances, i.e.,
-        // `漢<a><b><c><h-hws/>zi</c></b></a>` =>
-        // `漢<h-hws/><a><b><c>zi</c></b></a>`
-        if ( target !== parent.firstChild ) {
-          break
-        }
-      }
-    })
-
-    // Normalise nodes we messed up with
-    if ( isNodeNormalizeNormal ) {
-      context.normalize()
-    }
+    // Deal with:
+    // - <hws/>“字”<hws/>
+    // - <hws/>‘字’<hws/>
+    .replace( /\s[‘“]/g, curveQuote )
+    .replace( /[’”]\s/g, curveQuote )
+    .normalize()
 
     // Return the finder instance for future usage
     return finder
@@ -106,19 +120,17 @@ $.extend( Han, {
 })
 
 $.extend( Han.fn, {
-  HWS: null,
-
   renderHWS: function( strict ) {
     Han.renderHWS( this.context, strict )
-
-    this.HWS = $.tag( 'h-hws', this.context )
     return this
   },
 
   revertHWS: function() {
-    this.HWS.forEach(function( hws ) {
+    $.tag( 'h-hws', this.context )
+    .forEach(function( hws ) {
       $.remove( hws )
     })
+    this.HWS = []
     return this
   }
 })

@@ -13,31 +13,31 @@ var TYPESET = (function() {
   var rPtMid = UNICODE.punct.middle
   var rPtSing = UNICODE.punct.sing
   var rPt = rPtOpen + '|' + rPtEnd + '|' + rPtMid
-   
-  var rBdOpen = UNICODE.biaodian.open
-  var rBdClose = UNICODE.biaodian.close
-  var rBdEnd = UNICODE.biaodian.end
-  var rBdMid = UNICODE.biaodian.middle
-  var rBdLiga = UNICODE.biaodian.liga + '{2}'
-  var rBd = rBdOpen + '|' + rBdEnd + '|' + rBdMid
-   
+
+  var rBDOpen = UNICODE.biaodian.open
+  var rBDClose = UNICODE.biaodian.close
+  var rBDEnd = UNICODE.biaodian.end
+  var rBDMid = UNICODE.biaodian.middle
+  var rBDLiga = UNICODE.biaodian.liga + '{2}'
+  var rBD = rBDOpen + '|' + rBDEnd + '|' + rBDMid
+
   var rKana = UNICODE.kana.base + UNICODE.kana.combine + '?'
   var rKanaS = UNICODE.kana.small + UNICODE.kana.combine + '?'
   var rKanaH = UNICODE.kana.half
   var rEon = UNICODE.eonmun.base + '|' + UNICODE.eonmun.letter
   var rEonH = UNICODE.eonmun.half
-   
+
   var rHan = UNICODE.hanzi.base + '|' + UNICODE.hanzi.desc + '|' + UNICODE.hanzi.radical + '|' + rKana
-   
+
   var rCbn = UNICODE.ellinika.combine
   var rLatn = UNICODE.latin.base + rCbn + '*'
   var rGk = UNICODE.ellinika.base + rCbn + '*'
-   
+
   var rCyCbn = UNICODE.kirillica.combine
   var rCy = UNICODE.kirillica.base + rCyCbn + '*'
-   
+
   var rAlph = rLatn + '|' + rGk + '|' + rCy
-   
+
   // For words like `it's`, `Jones’s` or `'99`
   var rApo = '[\u0027\u2019]'
   var rChar = rHan + '|(?:' + rAlph + '|' + rApo + ')+'
@@ -59,29 +59,29 @@ var TYPESET = (function() {
       },
 
       biaodian: {
-        all:   new RegExp( '(' + rBd + ')', 'g' ),
-        open:  new RegExp( '(' + rBdOpen + ')', 'g' ),
-        close: new RegExp( '(' + rBdClose + ')', 'g' ),
-        end:   new RegExp( '(' + rBdEnd + ')', 'g' ),
-        liga:  new RegExp( '(' + rBdLiga + ')', 'g' )
+        all:   new RegExp( '(' + rBD + ')', 'g' ),
+        open:  new RegExp( '(' + rBDOpen + ')', 'g' ),
+        close: new RegExp( '(' + rBDClose + ')', 'g' ),
+        end:   new RegExp( '(' + rBDEnd + ')', 'g' ),
+        liga:  new RegExp( '(' + rBDLiga + ')', 'g' )
       },
 
-      hanzi: new RegExp( '(' + rHan + ')', 'g' ),
+      hanzi:     new RegExp( '(' + rHan + ')', 'g' ),
 
-      latin:       new RegExp( '(' + rLatn + ')', 'ig' ),
-      ellinika:    new RegExp( '(' + rGk + ')', 'ig' ),
-      kirillica:   new RegExp( '(' + rCy + ')', 'ig' ),
+      latin:     new RegExp( '(' + rLatn + ')', 'ig' ),
+      ellinika:  new RegExp( '(' + rGk + ')', 'ig' ),
+      kirillica: new RegExp( '(' + rCy + ')', 'ig' ),
 
-      kana:        new RegExp( '(' + rKana + '|' + rKanaS + '|' + rKanaH + ')', 'g' ),
-      eonmun:      new RegExp( '(' + rEon + '|' + rEonH + ')', 'g' )
+      kana:      new RegExp( '(' + rKana + '|' + rKanaS + '|' + rKanaH + ')', 'g' ),
+      eonmun:    new RegExp( '(' + rEon + '|' + rEonH + ')', 'g' )
     },
 
     /* Word-level selectors (詞級選擇器)
      */
     group: {
       biaodian: [
-        new RegExp( '((' + rBd + '){2,})', 'g' ),
-        new RegExp( '(' + rBdLiga + rBdOpen + ')', 'g' )
+        new RegExp( '((' + rBD + '){2,})', 'g' ),
+        new RegExp( '(' + rBDLiga + rBDOpen + ')', 'g' )
       ],
       punct:       null,
       hanzi:       new RegExp( '(' + rHan + ')+', 'g' ),
@@ -93,11 +93,11 @@ var TYPESET = (function() {
     /* Punctuation Rules (禁則)
      */
     jinze: {
-      hanging:  new RegExp( '(' + rWhite + '*)(' + rBdClose + '*|[…⋯]*)([、，。．])(?!' + rBdEnd + ')', 'ig' ),
-      touwei:   new RegExp( '(' + rBdOpen + '+)(' + rChar + ')(' + rBdEnd + '+)', 'ig' ),
-      tou:      new RegExp( '(' + rBdOpen + '+)(' + rChar + ')', 'ig' ),
-      wei:      new RegExp( '(' + rChar + ')(' + rBdEnd + '+)', 'ig' ),
-      middle:   new RegExp( '(' + rChar + ')(' + rBdMid + ')(' + rChar + ')', 'ig' )
+      hanging:  new RegExp( rWhite + '*([、，。．])(?!' + rBDEnd + ')', 'ig' ),
+      touwei:   new RegExp( '(' + rBDOpen + '+)(' + rChar + ')(' + rBDEnd + '+)', 'ig' ),
+      tou:      new RegExp( '(' + rBDOpen + '+)(' + rChar + ')', 'ig' ),
+      wei:      new RegExp( '(' + rChar + ')(' + rBDEnd + '+)', 'ig' ),
+      middle:   new RegExp( '(' + rChar + ')(' + rBDMid + ')(' + rChar + ')', 'ig' )
     },
 
     zhuyin: {
@@ -142,10 +142,25 @@ var TYPESET = (function() {
         [ '\u006F[\u030d\u0358]', '\uDB80\uDC6F' ],
         [ '\u0075[\u030d\u0358]', '\uDB80\uDC75' ],
 
-        [ '\u31B4[\u030d\u0358]', '\uDB8C\uDDB4' ],
-        [ '\u31B5[\u030d\u0358]', '\uDB8C\uDDB5' ],
-        [ '\u31B6[\u030d\u0358]', '\uDB8C\uDDB6' ],
-        [ '\u31B7[\u030d\u0358]', '\uDB8C\uDDB7' ]
+        [ '\u31B4[\u0307\u030d\u0358]', '\uDB8C\uDDB4' ],
+        [ '\u31B5[\u0307\u030d\u0358]', '\uDB8C\uDDB5' ],
+        [ '\u31B6[\u0307\u030d\u0358]', '\uDB8C\uDDB6' ],
+        [ '\u31B7[\u0307\u030d\u0358]', '\uDB8C\uDDB7' ]
+      ],
+
+      'comb-liga-vowel': [
+        [ '\u0061[\u030d\u0358]', '\uDB80\uDC61' ],
+        [ '\u0065[\u030d\u0358]', '\uDB80\uDC65' ],
+        [ '\u0069[\u030d\u0358]', '\uDB80\uDC69' ],
+        [ '\u006F[\u030d\u0358]', '\uDB80\uDC6F' ],
+        [ '\u0075[\u030d\u0358]', '\uDB80\uDC75' ]
+      ],
+
+      'comb-liga-zhuyin': [
+        [ '\u31B4[\u0307\u030d\u0358]', '\uDB8C\uDDB4' ],
+        [ '\u31B5[\u0307\u030d\u0358]', '\uDB8C\uDDB5' ],
+        [ '\u31B6[\u0307\u030d\u0358]', '\uDB8C\uDDB6' ],
+        [ '\u31B7[\u0307\u030d\u0358]', '\uDB8C\uDDB7' ]
       ]
     },
 

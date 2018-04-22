@@ -11,13 +11,11 @@
 
 「漢字標準格式」完整支援繁體中文、簡體中文及日文等三個採用漢字的語言文字。
 
-[檢視範例測試頁 →]
-(http://ethantw.github.io/Han/latest/)
+[檢視範例測試頁](http://ethantw.github.io/Han/latest/)
 
 ## 安裝
 - NPM `npm install --save han-css`
 - Bower `bower install --save Han`
-- Component `component install ethantw/Han`
 - Rails `gem install 'hanzi-rails'`（[詳細說明](https://github.com/billy3321/hanzi-rails)）
 
 ### 定製
@@ -31,19 +29,19 @@
 [cdnjs]: http://cdnjs.com/libraries/han
 
 ````html
-<link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/han.min.css">
+<link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css">
 ````
 
 腳本，
 
 ````html
-<script src="//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/han.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.js"></script>
 ````
 
 Web字體，
 
-- WOFF `//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/font/han.woff`
-- OTF `//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/font/han.otf`
+- WOFF `//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/font/han.woff`
+- OTF `//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/font/han.otf`
 
 ## 使用方式
 
@@ -63,22 +61,28 @@ Web字體，
 
 ## 瀏覽器支援
 
-- Google Chrome（最新版）
-- Mozilla Firefox ESR+
-- Opera Next（最新版）
-- Apple Safari 7+
-- Internet Explorer 10+
+- Chrome（最新版）
+- Edge（最新版）
+- Firefox（最新版）
+- Firefox ESR+
+- Internet Explorer 11
+- Opera（最新版）
+- Safari 9
 
-## 開發環境
-歡迎參與「漢字標準格式」的開發。下列清單展示了部分常用的開發指令。
+## 開發需求與指令
 
-- 安裝需要的開發模組：`sudo npm i`
+- Node.js
+- LiveScript 1.4.0（`sudo npm install -g livescript`）
+
+下列清單展示了部分常用的開發指令，
+
+- 安裝需要的開發模組：`sudo npm install`
 - 啓動開發環境：`npm start`或`gulp dev`（包含本機運行及自動編譯）
 - 編譯發布文件：`gulp build`
 - 測試`han.js`API：`gulp test`（PhantomJS）
-- 更新依賴模組：`npm update && gulp dep`
+- 更新依賴模組：`sudo npm update && gulp dep`
 
 * * *
-「漢字標準格式」版本：v3.2.5  
-本頁最後修改於：2015-6-29 15:37（UTC+8）
+「漢字標準格式」版本：v3.3.0  
+本頁最後修改於：2016-3-19 00:11（UTC+8）
 

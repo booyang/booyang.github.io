@@ -12,16 +12,22 @@
 // *
 h-hws,
 h-hws[hidden]
-  // box
-  display: inline
-  visibility: hidden
-  // typography
-  // 1
-  font: 0.89em Arial
+  &
+    // box
+    display: inline
+    // typography
+    font-family: Arial
+  &:before
+    content: ' '
+    // 1
+    letter-spacing: -.04em
 
   // 2
   code &,
   kbd  &,
   samp &,
-  pre  &
+  pre  &,
+  &.quote-inner,
+  &.quote-outer:lang(zh-Hans),
+  &.quote-outer:lang(zh-CN)
     display: none

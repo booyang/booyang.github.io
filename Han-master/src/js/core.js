@@ -17,14 +17,14 @@ var ROUTINE = [
 
   // Handle Biaodian
   /* 'jinzify', */
-  'renderHanging',
   'renderJiya',
+  'renderHanging',
+
+  // Address Biaodian correction
+  'correctBiaodian',
 
   // Address Hanzi and Western script mixed spacing
   'renderHWS',
-
-  // Address Basic Biaodian correction in Firefox
-  'correctBasicBD',
 
   // Address presentational correction to combining ligatures
   'substCombLigaWithPUA'
@@ -79,17 +79,23 @@ Han.fn = Han.prototype = {
   // the instance or in the prototype chain.
   render: function( routine ) {
     var it = this
-    var routine = Array.isArray( routine ) ? routine : this.routine
+    var routine = Array.isArray( routine )
+      ? routine
+      : this.routine
 
     routine
     .forEach(function( method ) {
-      try {
-        if ( typeof method === 'string' ) {
-          it[ method ]()
-        } else if ( Array.isArray( method )) {
-          it[ method.shift() ].apply( it, method )
-        }
-      } catch ( e ) {}
+      if (
+         typeof method === 'string' &&
+         typeof it[ method ] === 'function'
+      ) {
+        it[ method ]()
+      } else if (
+        Array.isArray( method ) &&
+        typeof it[ method[0] ] === 'function'
+      ) {
+        it[ method.shift() ].apply( it, method )
+      }
     })
     return this
   }

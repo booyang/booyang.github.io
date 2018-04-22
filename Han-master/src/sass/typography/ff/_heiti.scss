@@ -19,12 +19,12 @@
     local(FZLTXHB--B51-0),
     local(FZLTZHK--GBK1-0),
 
-    local('.PingFang SC Light'),
-    local('.PingFang TC Light'),
-    local('.PingFang-SC-Light'),
-    local('.PingFang-TC-Light'),
-    local('.PingFang SC'),
-    local('.PingFang TC'),
+    local('Pingfang SC Light'),
+    local('Pingfang TC Light'),
+    local('Pingfang-SC-Light'),
+    local('Pingfang-TC-Light'),
+    local('Pingfang SC'),
+    local('Pingfang TC'),
 
     local('Heiti SC Light'),
     local(STHeitiSC-Light),
@@ -65,9 +65,9 @@
 @font-face {
   font-family: 'Han Heiti CNS';
   src:
-    local('.PingFang TC Light'),
-    local('.PingFang-TC-Light'),
-    local('.PingFang TC'),
+    local('Pingfang TC Light'),
+    local('Pingfang-TC-Light'),
+    local('Pingfang TC'),
     local('Heiti TC Light'),
     local(STHeitiTC-Light),
     local('Heiti TC'),
@@ -92,9 +92,9 @@
   font-family: 'Han Heiti GB';
   src:
     local('Hiragino Sans GB'),
-    local('.PingFang SC Light'),
-    local('.PingFang-SC-Light'),
-    local('.PingFang SC'),
+    local('Pingfang SC Light'),
+    local('Pingfang-SC-Light'),
+    local('Pingfang SC'),
     local('Lantinghei SC Extralight'),
     local(FZLTXHK--GBK1-0),
     local('Lantinghei SC'),
@@ -126,8 +126,8 @@
     local(FZLTZHB--B51-0),
     local(FZLTZHK--GBK1-0),
 
-    local('.PingFang-SC-Semibold'),
-    local('.PingFang-TC-Semibold'),
+    local('Pingfang-SC-Semibold'),
+    local('Pingfang-TC-Semibold'),
     local('Heiti SC Medium'),
     local('STHeitiSC-Medium'),
     local('Heiti SC'),
@@ -135,11 +135,11 @@
     local('STHeitiTC-Medium'),
     local('Heiti TC'),
 
-    local('Microsoft YaHei Bold'),
+    local('Microsoft Yahei Bold'),
     local('Microsoft Jhenghei Bold'),
-    local(MicrosoftYaHei-Bold),
+    local(MicrosoftYahei-Bold),
     local(MicrosoftJhengHeiBold),
-    local('Microsoft YaHei'),
+    local('Microsoft Yahei'),
     local('Microsoft Jhenghei'),
 
     local('Noto Sans CJK KR Bold'),
@@ -192,8 +192,8 @@
   font-family: 'Han Heiti CNS';
   font-weight: 600;
   src:
-    local('.PingFang TC Semibold'),
-    local('.PingFang-TC-Semibold'),
+    local('Pingfang TC Semibold'),
+    local('Pingfang-TC-Semibold'),
     local('Heiti TC Medium'),
     local('STHeitiTC-Medium'),
     local('Heiti TC'),
@@ -203,8 +203,8 @@
     local(MicrosoftJhengHeiBold),
     local('Microsoft Jhenghei'),
 
-    local('Microsoft YaHei Bold'),
-    local(MicrosoftYaHei-Bold),
+    local('Microsoft Yahei Bold'),
+    local(MicrosoftYahei-Bold),
 
     local('Noto Sans CJK TC Bold'),
     local(NotoSansCJKtc-Bold),
@@ -232,16 +232,16 @@
     local('Hiragino Sans GB W6'),
     local(HiraginoSansGB-W6),
 
-    local('.PingFang SC Semibold'),
-    local('.PingFang-SC-Semibold'),
+    local('Pingfang SC Semibold'),
+    local('Pingfang-SC-Semibold'),
     local('Lantinghei SC Demibold'),
     local(FZLTZHK--GBK1-0),
     local('Heiti SC Medium'),
     local('STHeitiSC-Medium'),
     local('Heiti SC'),
-    local('Microsoft YaHei Bold'),
-    local(MicrosoftYaHei-Bold),
-    local('Microsoft YaHei'),
+    local('Microsoft Yahei Bold'),
+    local(MicrosoftYahei-Bold),
+    local('Microsoft Yahei'),
 
     local('Noto Sans CJK SC Bold'),
     local(NotoSansCJKsc-Bold),
@@ -253,112 +253,5 @@
     local('Source Han Sans SC'),
     local('Source Han Sans CN')
   ;
-}
-
-/* Address solution to `unicode-range` unsupported
- * issues in Firefox
- */
-@font-face {
-  font-family: 'Han Heiti';
-  src:
-    local('Hiragino Sans GB'),
-
-    local('Lantinghei TC Extralight'),
-    local('Lantinghei SC Extralight'),
-    local(FZLTXHB--B51-0),
-    local(FZLTZHK--GBK1-0),
-
-    local('.PingFang SC Light'),
-    local('.PingFang TC Light'),
-    local('.PingFang-SC-Light'),
-    local('.PingFang-TC-Light'),
-    local('.PingFang SC'),
-    local('.PingFang TC'),
-
-    local('Heiti SC Light'),
-    local('STHeitiSC-Light'),
-    local('Heiti SC'),
-    local('Heiti TC Light'),
-    local('STHeitiTC-Light'),
-    local('Heiti TC'),
-
-    local('Microsoft Yahei'),
-    local('Microsoft Jhenghei'),
-
-    local('Noto Sans CJK KR'),
-    local('Noto Sans CJK JP'),
-    local('Noto Sans CJK SC'),
-    local('Noto Sans CJK TC'),
-    local('Source Han Sans K'),
-    local('Source Han Sans KR'),
-    local('Source Han Sans JP'),
-    local('Source Han Sans CN'),
-    local('Source Han Sans HK'),
-    local('Source Han Sans TW'),
-    local('Source Han Sans TWHK'),
-    local('Droid Sans Fallback')
-  ;
-  unicode-range: U+"+270C";
-}
-
-@font-face {
-  font-family: 'Han Heiti';
-  font-weight: 600;
-  src:
-    local('Hiragino Sans GB W6'),
-    local(HiraginoSansGB-W6),
-
-    local('Lantinghei TC Demibold'),
-    local('Lantinghei SC Demibold'),
-    local(FZLTZHB--B51-0),
-    local(FZLTZHK--GBK1-0),
-
-    local('.PingFang-SC-Semibold'),
-    local('.PingFang-TC-Semibold'),
-
-    local('Heiti SC Medium'),
-    local('STHeitiSC-Medium'),
-    local('Heiti SC'),
-    local('Heiti TC Medium'),
-    local('STHeitiTC-Medium'),
-    local('Heiti TC'),
-
-    local('Microsoft YaHei Bold'),
-    local('Microsoft Jhenghei Bold'),
-    local(MicrosoftYaHei-Bold),
-    local(MicrosoftJhengHeiBold),
-    local('Microsoft YaHei'),
-    local('Microsoft Jhenghei'),
-
-    local('Noto Sans CJK KR Bold'),
-    local('Noto Sans CJK JP Bold'),
-    local('Noto Sans CJK SC Bold'),
-    local('Noto Sans CJK TC Bold'),
-    local(NotoSansCJKkr-Bold),
-    local(NotoSansCJKjp-Bold),
-    local(NotoSansCJKsc-Bold),
-    local(NotoSansCJKtc-Bold),
-    local('Source Han Sans K Bold'),
-    local(SourceHanSansK-Bold),
-    local('Source Han Sans K'),
-    local('Source Han Sans KR Bold'),
-    local('Source Han Sans JP Bold'),
-    local('Source Han Sans CN Bold'),
-    local('Source Han Sans HK Bold'),
-    local('Source Han Sans TW Bold'),
-    local('Source Han Sans TWHK Bold'),
-    local('SourceHanSansKR-Bold'),
-    local('SourceHanSansJP-Bold'),
-    local('SourceHanSansCN-Bold'),
-    local('SourceHanSansHK-Bold'),
-    local('SourceHanSansTW-Bold'),
-    local('SourceHanSansTWHK-Bold'),
-    local('Source Han Sans KR'),
-    local('Source Han Sans CN'),
-    local('Source Han Sans HK'),
-    local('Source Han Sans TW'),
-    local('Source Han Sans TWHK')
-  ;
-  unicode-range: U+"+270C";
 }
 

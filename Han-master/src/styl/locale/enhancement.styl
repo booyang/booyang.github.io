@@ -34,6 +34,10 @@ $han-reset-adjacent-deco-line
 // *    hence, one exception is hereby made.
 // * 3. Skip emphasis mark while under punctuation.
 // *
+$han-need-no-jinze
+  h-jinze
+    display: inline
+
 $han-text-emphasis-pf
   {$HAN-JS-RENDERED-CLASS} &
     padding-bottom: auto
@@ -72,7 +76,7 @@ $han-text-emphasis-pf
 // 3
 $han-text-emphasis-skip
   h-char.punct,
-h-char.biaodian
+  h-char.biaodian
     han-text-emphasis-internal(none)
     .no-textemphasis &:after
       content: none !important
@@ -93,3 +97,4 @@ h-word
   // box
   display: inline-block
   text-indent: 0
+

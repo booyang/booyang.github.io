@@ -13,7 +13,6 @@ Locale.support = (function() {
   // Create an element for feature detecting
   // (in `testCSSProp`)
   var elem = $.create( 'h-test' )
-  var exposed = {}
 
   function testCSSProp( prop ) {
     var ucProp = prop.charAt(0).toUpperCase() + prop.slice(1)
@@ -32,7 +31,7 @@ Locale.support = (function() {
     var fakeBody = body || $.create( 'body' )
     var div = $.create( 'div' )
     var container = body ? div : fakeBody
-    var  callback = typeof callback === 'function' ? callback : function() {}
+    var callback = typeof callback === 'function' ? callback : function() {}
     var style, ret, docOverflow
 
     style = [ '<style>', rule, '</style>' ].join('')
@@ -73,33 +72,7 @@ Locale.support = (function() {
   }
 
   return {
-    ruby: (function() {
-      var ruby = $.create( 'ruby' )
-      var rt = $.create( 'rt' )
-      var rp = $.create( 'rp' )
-      var ret
-
-      ruby.appendChild( rp )
-      ruby.appendChild( rt )
-      root.appendChild( ruby )
-
-      // Browsers that support ruby hide the `<rp>` via `display: none`
-      ret = (
-        getStyle( rp, 'display' ) === 'none' ||
-        // but in IE, `<rp>` has `display: inline`
-        // so, the test needs other conditions:
-        getStyle( ruby, 'display' ) === 'ruby' &&
-        getStyle( rt, 'display' ) === 'ruby-text'
-      ) ? true : false
-
-      // Remove and clean from memory
-      root.removeChild( ruby )
-      ruby = null
-      rt = null
-      rp = null
-
-      return ret
-    })(),
+    columnwidth: testCSSProp( 'columnWidth' ),
 
     fontface: (function() {
       var ret
@@ -122,6 +95,52 @@ Locale.support = (function() {
       return ret
     })(),
 
+    ruby: (function() {
+      var ruby = $.create( 'ruby' )
+      var rt = $.create( 'rt' )
+      var rp = $.create( 'rp' )
+      var ret
+
+      ruby.appendChild( rp )
+      ruby.appendChild( rt )
+      root.appendChild( ruby )
+
+      // Browsers that support ruby hide the `<rp>` via `display: none`
+      ret = (
+        getStyle( rp, 'display' ) === 'none' ||
+        // but in IE, `<rp>` has `display: inline`, so the test needs other conditions:
+        getStyle( ruby, 'display' ) === 'ruby' &&
+        getStyle( rt, 'display' ) === 'ruby-text'
+      ) ? true : false
+
+      // Remove and clean from memory
+      root.removeChild( ruby )
+      ruby = null
+      rt = null
+      rp = null
+
+      return ret
+    })(),
+
+    'ruby-display': (function() {
+      var div = $.create( 'div' )
+
+      div.innerHTML = '<h-test-a style="display: ruby;"></h-test-a><h-test-b style="display: ruby-text-container;"></h-test-b>'
+      return div.querySelector( 'h-test-a' ).style.display === 'ruby' && div.querySelector( 'h-test-b' ).style.display === 'ruby-text-container'
+    })(),
+
+    'ruby-interchar': (function() {
+      var IC = 'inter-character'
+      var div = $.create( 'div' )
+      var css
+
+      div.innerHTML = '<h-test style="-moz-ruby-position:' + IC + ';-ms-ruby-position:' + IC + ';-webkit-ruby-position:' + IC + ';ruby-position:' + IC + ';"></h-test>'
+      css = div.querySelector( 'h-test' ).style
+      return css.rubyPosition === IC || css.WebkitRubyPosition === IC || css.MozRubyPosition === IC || css.msRubyPosition === IC
+    })(),
+
+    textemphasis: testCSSProp( 'textEmphasis' ),
+
     // Address feature support test for `unicode-range` via
     // detecting whether it's Arial (supported) or
     // Times New Roman (not supported).
@@ -140,10 +159,6 @@ Locale.support = (function() {
       )
       return ret
     })(),
-
-    columnwidth: testCSSProp( 'columnWidth' ),
-
-    textemphasis: testCSSProp( 'textEmphasis' ),
 
     writingmode: testCSSProp( 'writingMode' )
   }

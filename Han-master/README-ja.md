@@ -11,14 +11,12 @@
 
 漢字標準格式は、中国語繁体字、中国語簡体字および日本語をサポートします。
 
-[表示例のテストページ（中国語）→]
-(http://ethantw.github.io/Han/latest/)
+[表示例のテストページ（中国語）](http://ethantw.github.io/Han/latest/)
 
 ## インストール方法
 
 - NPM `npm install --save han-css`
 - Bower `bower install --save Han`
-- Component `component install ethantw/Han`
 - Rails `gem install 'hanzi-rails'`（[詳細はこちら](https://github.com/billy3321/hanzi-rails)）
 
 ### カスタマイズ
@@ -33,19 +31,19 @@
 [cdnjs]: http://cdnjs.com/libraries/han
 
 ````html
-<link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/han.min.css">
+<link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css">
 ````
 
 JavaScript
 
 ````html
-<script src="//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/han.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.js"></script>
 ````
 
 Webフォント
 
-- WOFF `//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/font/han.woff`
-- OTF `//cdnjs.cloudflare.com/ajax/libs/Han/3.2.5/font/han.otf`
+- WOFF `//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/font/han.woff`
+- OTF `//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/font/han.otf`
 
 ## 使用方式
 
@@ -81,24 +79,30 @@ han.jsはDOM環境でのみ動作します。必要な場合は、サーバに[j
 
 ## サポートするブラウザ
 
-- Google Chrome（最新版）
-- Mozilla Firefox ESR+
-- Opera Next（最新版）
-- Apple Safari 7+
-- Internet Explorer 10+
+- Chrome（最新版）
+- Edge（最新版）
+- Firefox（最新版）
+- Firefox ESR+
+- Internet Explorer 11
+- Opera（最新版）
+- Safari 9
 
 ## 開発について
-漢字標準格式の開発に協力してくれる方を歓迎します。以下はプログラムの開発に有用なコマンドの一覧です。
 
-- 開発パッケージをインストール：`sudo npm i`
+- Node.js
+- LiveScript 1.4.0（`sudo npm install -g livescript`）
+
+以下はプログラムの開発に有用なコマンドの一覧です。
+
+- 開発パッケージをインストール：`sudo npm install`
 - 開発環境の起動：`npm start`か`gulp dev`（ローカルサーバの実行と自動コンパイルを含む）
 - コンパイルしたファイルを公開：`gulp build`
 - `han.js`のAPIをテストする：`gulp test`（PhantomJS）
-- モジュールを更新する：`npm update && gulp dep`
+- モジュールを更新する：`sudo npm update && gulp dep`
 
 * * *
-漢字標準格式 v3.2.5  
-Last-modified: 2015-6-29 15:38 (UTC+8)  
+漢字標準格式 v3.3.0  
+Last-modified: 2016-3-19 00:11 (UTC+8)  
 Translator: [神場雅史][translator] (Jimba Masafumi, [@westantenna][trans-twr])
 
 [translator]: http://westantenna.com
