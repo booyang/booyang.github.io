@@ -261,7 +261,7 @@ p {
   color: #fff;
   text-align: center;
   line-height: 100px;
-  font-size: 30px;
+  font-size: 24px;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
@@ -583,6 +583,7 @@ p {
 .dot1 {
   width: 36px;
   height: 36px;
+  background: url("../images/linkedin-logo@1440.svg") center center no-repeat;
 }
 .dot2 {
   width: 32px;
@@ -730,7 +731,7 @@ textarea {
   padding-bottom: 48px;
 }
 .footer #contact-icon {}
-.footer #contact-icon span.icon {
+.footer #contact-icon a.icon {
   width: 75px;
   height: 75px;
   margin-right: 30px;
@@ -740,19 +741,19 @@ textarea {
   background-color: #8596c6; */
   margin-bottom: 30px;
 }
-.footer #contact-icon span.icon1 {
+.footer #contact-icon a.icon1 {
   background: url("../images/Facebook.png") center center no-repeat
 }
-.footer #contact-icon span.icon2 {
+.footer #contact-icon a.icon2 {
   background: url("../images/Twitter.png") center center no-repeat
 }
-.footer #contact-icon span.icon3 {
+.footer #contact-icon a.icon3 {
   background: url("../images/Medium.png") center center no-repeat
 }
-.footer #contact-icon span.icon4 {
+.footer #contact-icon a.icon4 {
   background: url("../images/Email.png") center center no-repeat
 }
-.footer #contact-icon span.icon5 {
+.footer #contact-icon a.icon5 {
   background: url("../images/Telegram.png") center center no-repeat
 }
 /*****************************************************************/
@@ -1031,6 +1032,7 @@ textarea {
   .dot1 {
     width: 32px;
     height: 32px;
+    background: url("../images/linkedin-logo@1440.svg") center center no-repeat;
   }
   .dot2 {
     width: 28px;
@@ -1116,25 +1118,25 @@ textarea {
     padding-bottom: 42px;
   }
   .footer #contact-icon {}
-  .footer #contact-icon span.icon {
+  .footer #contact-icon a.icon {
     width: 56px;
     height: 56px;
     margin-right: 20px;
     margin-bottom: 24px;
   }
-  .footer #contact-icon span.icon1 {
+  .footer #contact-icon a.icon1 {
     background: url("../images/Facebook@1440.png") center center no-repeat
   }
-  .footer #contact-icon span.icon2 {
+  .footer #contact-icon a.icon2 {
     background: url("../images/Twitter@1440.png") center center no-repeat
   }
-  .footer #contact-icon span.icon3 {
+  .footer #contact-icon a.icon3 {
     background: url("../images/Medium@1440.png") center center no-repeat
   }
-  .footer #contact-icon span.icon4 {
+  .footer #contact-icon a.icon4 {
     background: url("../images/Email@1440.png") center center no-repeat
   }
-  .footer #contact-icon span.icon5 {
+  .footer #contact-icon a.icon5 {
     background: url("../images/Telegram@1440.png") center center no-repeat
   }
 }
@@ -1444,6 +1446,7 @@ textarea {
   .dot1 {
     width: 16px;
     height: 16px;
+    background: url("../images/linkedin-logo@720.svg") center center no-repeat;
   }
   .dot2 {
     width: 14px;
@@ -1452,13 +1455,13 @@ textarea {
 
   /**advisors**/
   #advisors li {
-    width: 350px;
+    width: 217.5px;
     margin-bottom: 20px;
     margin-right: 20px;
   }
   #advisors li .img img {
-    width: 350px;
-    height: 280px;
+    width: 217.5px;
+    height: 138px;
   }
   #advisors li .dot {
     margin-right: 8px;
@@ -1467,9 +1470,9 @@ textarea {
     font-size: 16px;
     line-height:48px;
   }
-  #advisors li:nth-child(2n) {
+  /* #advisors li:nth-child(2n) {
     margin-right: 0;
-  }
+  } */
 
   /**contactus**/
   .contactus {
@@ -1479,22 +1482,16 @@ textarea {
     font-size: 22px;
   }
   .contactus .contactus-box-left {
-    float: none;
+    float: left;
   }
   .contactus .contactus-map {
-    float: none;
-    width: 480px;
-    height: 300px;
+    float: right;
+    width: 350px;
+    height: 225px;
   }
   .contactus .contactus-box-left .contactus-box-item {
     font-size: 24px;
-  }
-  .contactus .contactus-map {
-    width: 680px;
-    height: 460px;
-  }
-  .contactus .contactus-box-left .contactus-box-item {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   /** other **/
@@ -1502,20 +1499,20 @@ textarea {
     font-size: 16px;
   }
   input[type="text"] {
-    height: 48px;
-    line-height: 48px;
+    height: 32px;
+    line-height: 32px;
     padding-left: 20px;
   }
   textarea {
     line-height: 32px;
     height: 128px;
-    width: 560px;
+    width: 320px;
   }
   .inputText1, .inputText2 {
-    width: 185px;
+    width: 157px;
   }
   .inputText {
-    width: 402px;
+    width: 339px;
   }
   .contactus-btn {
     width: 118px;
@@ -1543,25 +1540,25 @@ textarea {
     padding-bottom: 20px;
   }
   .footer #contact-icon {}
-  .footer #contact-icon span.icon {
+  .footer #contact-icon a.icon {
     width: 28px;
     height: 28px;
     margin-right: 10px;
     margin-bottom: 12px;
   }
-  .footer #contact-icon span.icon1 {
+  .footer #contact-icon a.icon1 {
     background: url("../images/Facebook@720.png") center center no-repeat
   }
-  .footer #contact-icon span.icon2 {
+  .footer #contact-icon a.icon2 {
     background: url("../images/Twitter@720.png") center center no-repeat
   }
-  .footer #contact-icon span.icon3 {
+  .footer #contact-icon a.icon3 {
     background: url("../images/Medium@720.png") center center no-repeat
   }
-  .footer #contact-icon span.icon4 {
+  .footer #contact-icon a.icon4 {
     background: url("../images/Email@720.png") center center no-repeat
   }
-  .footer #contact-icon span.icon5 {
+  .footer #contact-icon a.icon5 {
     background: url("../images/Telegram@720.png") center center no-repeat
   }
 }
