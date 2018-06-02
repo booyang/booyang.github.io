@@ -8,17 +8,12 @@
     <meta name="description" content="This is the home page of Dimension Chain. Dimension Chain is a decentralized data storage project using blockchain technology. Dimension Chain is reliable, cost efficient, and easy to use. ">
     <meta name="keywords" content="blockchain dimension chain dms token cryptocurrency data ico 次元链 区块链 次元 数据">
     <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
-    <script>
-    var userAgent = navigator.userAgent.toLowerCase();
-    if (userAgent.indexOf("iphone") == -1 || userAgent.indexOf("ipad") == -1 || userAgent.indexOf("android") == -1 || userAgent.indexOf("ios") == -1 || userAgent.indexOf("windows phone") == -1)
-    {
-      location.href = "index.html";
-    }
-    else
-    {
-      location.href = "mobile.html";
-    }
-    </script>
+    <script type=”text/javascript”>
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+      {
+        window.location = “mobile.html”; //可以换成http地址
+      }
+    </script>  
 </head>
 
 <body>
