@@ -126,9 +126,9 @@ p {
 }
 .wrapper{
   width: auto!important;
-  width: 1440px;
-  max-width: 1440px;
-  min-width: 1440px;
+  width: 1640px;
+  max-width: 1640px;
+  min-width: 1640px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -643,6 +643,11 @@ p {
   width: 774px;
   height: 534px;
   background: url("../images/map.png") center center no-repeat;
+}
+
+#map {
+ height: 534px;
+ width: 774px;
 }
 
 /** other **/

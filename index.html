@@ -9,6 +9,8 @@
     <meta name="keywords" content="blockchain dimension chain dms token cryptocurrency data ico 次元链 区块链 次元 数据">
     <link href="css/style.css" rel="stylesheet">
 </head>
+
+
 <body>
 	<div class="wrapper topbar">
 		<div class="menu">
@@ -482,7 +484,24 @@
               </div>
               <span class="contactus-btn">Connect Us</span>
             </div>
-            <div class="contactus-map fr"></div>
+            <!-- <div class="contactus-map fr"></div> -->
+            <div id="map" class="contactus-map fr"></div>
+            <script>
+              function initMap() {
+                var Dimension = {lat: 40.091361, lng: -88.240218};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 10,
+                  center: Dimension
+                });
+                var marker = new google.maps.Marker({
+                  position: Dimension,
+                  map: map
+                });
+              }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt2kBuxhY1f58h_9BBR0KofojetT9WGck&callback=initMap">
+            </script>
           </div>
         </div>
     </div>
