@@ -125,9 +125,8 @@ p {
   width: 100%
 }
 .wrapper{
-  width: auto!important;
+  /* width: auto!important; */
   width: 1640px;
-  max-width: 1640px;
   min-width: 1640px;
   position: relative;
   margin-left: auto;
@@ -170,11 +169,17 @@ p {
   width: auto!important;
   min-width: 1440px;
 }
-.index-bg {
+.index-bg {adding-top:92px;
   background-color: #f7f9fe;
 }
 .index-bg2 {
   background-color: #dcdfff;
+}
+.pt100 {
+  padding-top: 100px;
+}
+.mb100 {
+  margin-bottom: 100px;
 }
 /**顶部导航**/
 .topbar {
@@ -197,6 +202,7 @@ p {
   top: 0;
   width: 82px;
   height: 55px;
+  background: url("../images/Logo.png") center center no-repeat;
 }
 .us {
   height: 25px;
@@ -210,6 +216,18 @@ p {
   background: url("../images/us-icon.png") left center no-repeat;
 }
 
+.jp {
+  height: 25px;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  padding-left: 56px;
+  background: url("../images/jp-icon.png") left center no-repeat;
+}
+
 /**banner**/
 #banner {
   height: 648px;
@@ -218,11 +236,11 @@ p {
   margin-bottom: 96px;
   background: url('../images/Banner.png') right top no-repeat;
 }
-#banner .title {
+/* #banner .title {
   color: #657387;
   line-height: 85px;
   font-size: 72px;
-}
+} */
 #banner .chain {
   width: 584px;
   height: 209px;
@@ -323,7 +341,7 @@ p {
 /**Highlight**/
 .highlight-box {
   width: 1680px;
-  margin: 0 auto;
+  margin: 0 auto 96px;
 }
 #highlight {
   padding: 48px 0;
@@ -407,7 +425,6 @@ p {
   display: flex;
 }
 #application li {
-  width: 380px;
   flex: 1;
   padding: 0 30px;
   display: inline-block;
@@ -452,7 +469,6 @@ p {
 #roadmap .roadmap-box {
   padding-top: 100px;
   overflow: hidden;
-  padding-bottom: 120px;
   background: url("../images/Roadmap1.png") center top no-repeat;
 }
 #roadmap .roadmap-item {
@@ -501,6 +517,7 @@ p {
   background: url("../images/Roadmap5.png") center center no-repeat;
 }
 .continued {
+  margin-bottom: 96px;
   text-align: center;
 }
 /**Executive Team**/
@@ -642,12 +659,8 @@ p {
 .contactus .contactus-map {
   width: 774px;
   height: 534px;
+  overflow: hidden;
   background: url("../images/map.png") center center no-repeat;
-}
-
-#map {
- height: 534px;
- width: 774px;
 }
 
 /** other **/
@@ -717,13 +730,838 @@ textarea {
   padding-bottom: 48px;
 }
 .footer #contact-icon {}
-.footer #contact-icon span {
-  width: 76px;
-  height: 76px;
+.footer #contact-icon span.icon {
+  width: 75px;
+  height: 75px;
   margin-right: 30px;
   display: inline-block;
-  border-radius: 50%;
+  /* border-radius: 50%;
   -webkit-border-radius: 50%;
-  background-color: #8596c6;
+  background-color: #8596c6; */
   margin-bottom: 30px;
+}
+.footer #contact-icon span.icon1 {
+  background: url("../images/Facebook.png") center center no-repeat
+}
+.footer #contact-icon span.icon2 {
+  background: url("../images/Twitter.png") center center no-repeat
+}
+.footer #contact-icon span.icon3 {
+  background: url("../images/Medium.png") center center no-repeat
+}
+.footer #contact-icon span.icon4 {
+  background: url("../images/Email.png") center center no-repeat
+}
+.footer #contact-icon span.icon5 {
+  background: url("../images/Telegram.png") center center no-repeat
+}
+/*****************************************************************/
+/** Screen 1400px~ 1639px **/
+@media screen and (min-width:1440px) and (max-width:1639px) {
+  body {
+    font-size: 14px;
+    background: url('../images/BannerBackground@1440.png') center top no-repeat;
+  }
+  p {
+    font-size: 20px;
+  }
+  .pt100 {
+    padding-top: 85px;
+  }
+  .mb100 {
+    margin-bottom: 85px;
+  }
+  .wrapper{
+    width: 1440px;
+    min-width: 1440px;
+  }
+  .index-bg,.index-bg2,.footer-bg {
+    width: auto!important;
+    min-width: 1440px;
+  }
+  .menu {
+    height: 41px;
+    line-height: 41px;
+    padding-left: 92px;
+    font-size: 20px;
+  }
+  .menu .logo {
+    width: 62px;
+    height: 41px;
+    background: url("../images/Logo@1440.png") center center no-repeat;
+  }
+  .us {
+    height: 18px;
+    padding-left: 45px;
+    font-size: 20px;
+    background: url("../images/us-icon@1440.png") left center no-repeat;
+  }
+  .jp {
+    height: 18px;
+    padding-left: 45px;
+    font-size: 20px;
+    background: url("../images/jp-icon@1440.png") left center no-repeat;
+  }
+
+  /**banner**/
+  #banner {
+    height: 507px;
+    padding-right: 920px;
+    padding-top: 100px;
+    background: url('../images/Banner@1440.png') right top no-repeat;
+  }
+  /* #banner .title {
+    line-height: 85px;
+    font-size: 72px;
+  } */
+  #banner .chain {
+    width: 438px;
+    height: 157px;
+    background: url("../images/DIMENSIONCHAIN@1440.png") center center no-repeat;
+  }
+  #banner p {
+    padding-top: 30px;
+  }
+  #banner .box-btn {
+    margin-top: 90px;
+    height: 83px;
+  }
+  #banner .box-btn .btn {
+    width: 236px;
+    height: 83px;
+    line-height: 90px;
+    font-size: 18px;
+  }
+  #banner .box-btn .bottom1 {
+    background-image: url('../images/Bottom1@1440.png')
+  }
+  #banner .box-btn .bottom2 {
+    background-image: url('../images/Bottom2@1440.png')
+  }
+
+  /**统一title**/
+  .title-wrap {
+    height: 200px;
+  }
+  .title-wrap .title-box {
+    font-size: 172px;
+    line-height: 200px;
+  }
+  .title-wrap h3 {
+    font-size: 45px;
+    padding-top: 60px;
+    top: 20px;
+  }
+
+  /**Dimension Project**/
+  #project {
+    height: 670px;
+    padding-left: 850px;
+    padding-top: 40px;
+    background: url('../images/Project@1440.png') left top no-repeat;
+  }
+  /**Feature**/
+  #feature .feature-box .title {
+    font-size: 45px;
+    padding-bottom: 20px;
+    padding-top: 65px;
+  }
+  #feature .feature-box1 {
+    height: 356px;
+    padding-right: 620px;
+    background: url('../images/PermanentStorage@1440.png') right top no-repeat;
+  }
+  #feature .feature-box2 {
+    height: 320px;
+    padding-left: 820px;
+    background: url('../images/CredibilityOfData@1440.png') 160px top no-repeat;
+  }
+  #feature .feature-box3 {
+    height: 323px;
+    padding-right: 620px;
+    background: url('../images/AuthenticityVerification@1440.png') right top no-repeat;
+  }
+
+  /**Highlight**/
+  .highlight-box {
+    width: 1440px;
+    margin: 0 auto 85px;
+  }
+  #highlight {
+    padding: 36px 0;
+  }
+  #highlight li {
+    width: 360px;
+    padding: 0;
+  }
+  #highlight li .title {
+    font-family: "KozGoPr6N-Heavy";
+    padding: 24px 0;
+    font-size: 20px;
+  }
+  #highlight li .img {
+    width: 360px;
+    height: 360px;
+  }
+  #highlight li .img1 {
+    background-image: url('../images/HighlightP@1440.png')
+  }
+  #highlight li .img2 {
+    background-image: url('../images/HighlightM@1440.png')
+  }
+  #highlight li .img3 {
+    background-image: url('../images/HighlightR@1440.png')
+  }
+  #highlight li .img4 {
+    background-image: url('../images/HighLightMM@1440.png')
+  }
+
+  /**Feature Version**/
+  #feature-version .feature-version-box .title {
+    font-size: 20px;
+    padding-bottom: 56px;
+    padding-top: 85px;
+  }
+  #feature-version .feature-version-box1 {
+    height: 399px;
+    padding-right: 620px;
+    background: url('../images/FutureVersion1@1440.png') right top no-repeat;
+  }
+  #feature-version .feature-version-box2 {
+    height: 408px;
+    padding-left: 620px;
+    background: url('../images/FutureVersion2@1440.png') 60px top no-repeat;
+  }
+  #feature-version .feature-version-box3 {
+    height: 401px;
+    padding-right: 620px;
+    background: url('../images/FutureVersion3@1440.png') right top no-repeat;
+  }
+
+  #feature-version .feature-version-box4 {
+    height: 404px;
+    padding-left: 620px;
+    background: url('../images/FutureVersion4@1440.png') 60px top no-repeat;
+  }
+
+  /**application**/
+  .application-box {
+    width: 1440px;
+  }
+  #application {
+    padding: 36px 0;
+  }
+  #application li {
+    padding: 0 15px;
+  }
+  #application li .title {
+    font-size: 20px;
+    padding: 30px 0;
+  }
+  #application li .img {
+    width: 450px;
+    height: 450px;
+  }
+  #application li .img1 {
+    background-image: url('../images/Application1@1440.png')
+  }
+  #application li .img2 {
+    background-image: url('../images/Application2@1440.png')
+  }
+  #application li .img3 {
+    background-image: url('../images/Application3@1440.png')
+  }
+
+  /**roadmap**/
+  #roadmap .title {
+    font-size: 20px;
+  }
+  .roadmapDot {
+    width: 58px;
+    height: 58px;
+  }
+  #roadmap .roadmap-box {
+    background: url("../images/Roadmap1@1440.png") center top no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap2, #roadmap .roadmap-item-right .Roadmap2 {
+    background: url("../images/Roadmap2@1440.png") center center no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap3,#roadmap .roadmap-item-right .Roadmap3 {
+    background: url("../images/Roadmap3@1440.png") center center no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap4,#roadmap .roadmap-item-right .Roadmap4 {
+    background: url("../images/Roadmap4@1440.png") center center no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap5,#roadmap .roadmap-item-right .Roadmap5 {
+    background: url("../images/Roadmap5@1440.png") center center no-repeat;
+  }
+  .continued {
+    margin-bottom: 85px;
+  }
+  /**Executive Team**/
+  #executive li {
+    margin-bottom: 30px;
+  }
+  #executive li .box-left {
+    width: 220px;
+  }
+  #executive li .box-left .img img {
+    width: 220px;
+    height: 280px;
+  }
+  #executive li .box-right {
+    padding-top: 72px;
+    padding-left: 220px;
+  }
+  #executive li .box-right .title {
+    padding-bottom: 20px;
+    margin-bottom: 45px;
+    border-bottom: 2px #92a6ed solid;
+  }
+  #executive li .box-right h3 {
+    font-size: 30px;
+    padding-bottom: 24px;
+  }
+  .dot-box {
+    line-height: 32px;
+  }
+  .dot {
+    margin-left: 16px;
+  }
+  .dot1 {
+    width: 32px;
+    height: 32px;
+  }
+  .dot2 {
+    width: 28px;
+    height: 28px;
+  }
+
+  /**advisors**/
+  #advisors li {
+    width: 345px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+  }
+  #advisors li .img img {
+    width: 345px;
+    height: 220px;
+  }
+  #advisors li .dot {
+    margin-right: 16px;
+  }
+  #advisors li .title {
+    font-size: 20px;
+    line-height: 48px;
+  }
+  #advisors li:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  /**contactus**/
+  .contactus {
+    padding: 72px 0;
+  }
+  .contactus .title {
+    font-size: 45px;
+  }
+  .contactus .contactus-box-left .contactus-box-item {
+    font-size: 30px;
+  }
+  .contactus .contactus-map {
+    width: 680px;
+    height: 460px;
+  }
+
+  /** other **/
+  input[type="text"], textarea {
+    font-size: 20px;
+  }
+  input[type="text"] {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+  }
+  textarea {
+    line-height: 32px;
+    height: 128PX;
+    width: 560px;
+  }
+  .inputText1, .inputText2 {
+    width: 185px;
+  }
+  .inputText {
+    width: 402px;
+  }
+  .contactus-btn {
+    width: 236PX;
+    line-height: 83px;
+    font-size: 24px;
+    height: 83px;
+    background: url("../images/Bottom2@1440.png") center center no-repeat;
+  }
+
+  /**Footer**/
+  .footer {
+    padding: 80px 0 20px;
+  }
+  .footer .footer-left {
+    width: 600px;
+  }
+  .copyright {
+    padding-bottom: 36px;
+  }
+  .footer .footer-left .title, .footer .footer-right .title {
+    font-size: 20px;
+    padding-bottom: 42px;
+  }
+  .footer #contact-icon {}
+  .footer #contact-icon span.icon {
+    width: 56px;
+    height: 56px;
+    margin-right: 20px;
+    margin-bottom: 24px;
+  }
+  .footer #contact-icon span.icon1 {
+    background: url("../images/Facebook@1440.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon2 {
+    background: url("../images/Twitter@1440.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon3 {
+    background: url("../images/Medium@1440.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon4 {
+    background: url("../images/Email@1440.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon5 {
+    background: url("../images/Telegram@1440.png") center center no-repeat
+  }
+}
+
+/*****************************************************************/
+/** Screen 720px~ 1439px **/
+@media screen and (min-width:720px) and (max-width:1339px) {
+  body {
+    background: url('../images/BannerBackground@720.png') center top no-repeat;
+  }
+  p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .pt100 {
+    padding-top: 72px;
+  }
+  .mb100 {
+    margin-bottom: 72px;
+  }
+  .wrapper{
+    width: 720px;
+    min-width: 720px;
+  }
+  .index-bg,.index-bg2,.footer-bg {
+    width: auto!important;
+    min-width: 720px;
+  }
+  .menu {
+    height: 21px;
+    line-height: 21px;
+    padding-left: 56px;
+    font-size: 16px;
+  }
+  .menu .logo {
+    width: 31px;
+    height: 21px;
+    background: url("../images/Logo@720.png") center center no-repeat;
+  }
+  .us {
+    height: 16px;
+    padding-left: 30px;
+    font-size: 16px;
+    background: url("../images/us-icon@720.png") left center no-repeat;
+  }
+
+  .jp {
+    height: 16px;
+    padding-left: 30px;
+    font-size: 16px;
+    background: url("../images/jp-icon@720.png") left center no-repeat;
+  }
+
+  /**banner**/
+  #banner {
+    height: 353px;
+    padding-right: 460px;
+    padding-top: 50px;
+    margin-bottom: 48px;
+    background: url('../images/Banner@720.png') right top no-repeat;
+  }
+  #banner .chain {
+    width: 219px;
+    height: 78px;
+    background: url("../images/DIMENSIONCHAIN@720.png") center center no-repeat;
+  }
+  #banner p {
+    padding-top: 20px;
+  }
+  #banner .box-btn {
+    margin-top: 30px;
+    height: 83px;
+  }
+  #banner .box-btn .btn {
+    width: 118px;
+    height: 41px;
+    line-height: 40px;
+    font-size: 8px;
+  }
+  #banner .box-btn .bottom1 {
+    background-image: url('../images/Bottom1@720.png')
+  }
+  #banner .box-btn .bottom2 {
+    background-image: url('../images/Bottom2@720.png')
+  }
+
+  /**统一title**/
+  .title-wrap {
+    height: 100px;
+  }
+  .title-wrap .title-box {
+    font-size: 86px;
+    line-height: 100px;
+  }
+  .title-wrap h3 {
+    font-size: 22px;
+    padding-top: 30px;
+    top: 10px;
+  }
+
+  /**Dimension Project**/
+  #project {
+    height: auto;
+    padding-left: 375px;
+    padding-bottom: 48px;
+    padding-top: 0;
+    background: url('../images/Project@720.png') left top no-repeat;
+  }
+  /**Feature**/
+  #feature .feature-box .title {
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-top: 32px;
+  }
+  #feature .feature-box1 {
+    height: 178px;
+    margin-right: 0;
+    padding-right: 240px;
+    padding-bottom: 60px;
+    background: url('../images/PermanentStorage@720.png') right 50px no-repeat;
+  }
+  #feature .feature-box2 {
+    height: 160px;
+    padding-bottom: 60px;
+    padding-left: 240px;
+    background: url('../images/CredibilityOfData@720.png') left 50px no-repeat;
+  }
+  #feature .feature-box3 {
+    height: 161px;
+    padding-right: 240px;
+    padding-bottom: 60px;
+    margin-right: 0;
+    background: url('../images/AuthenticityVerification@720.png') right 50px no-repeat;
+  }
+
+  /**Highlight**/
+  .highlight-box {
+    width: 720px;
+    margin: 0 auto 42px;
+  }
+  #highlight {
+    padding: 24px 0;
+  }
+  #highlight li {
+    width: 180px;
+    padding: 0;
+  }
+  #highlight li .title {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+  #highlight li .img {
+    width: 180px;
+    height: 180px;
+  }
+  #highlight li p {
+    padding: 0 10px;
+  }
+  #highlight li .img1 {
+    background-image: url('../images/HighlightP@720.png')
+  }
+  #highlight li .img2 {
+    background-image: url('../images/HighlightM@720.png')
+  }
+  #highlight li .img3 {
+    background-image: url('../images/HighlightR@720.png')
+  }
+  #highlight li .img4 {
+    background-image: url('../images/HighLightMM@720.png')
+  }
+
+  /**Feature Version**/
+  #feature-version .feature-version-box .title {
+    font-size: 16px;
+    padding-bottom: 28px;
+    padding-top: 42px;
+  }
+  #feature-version .feature-version-box1,   #feature-version .feature-version-box3 {
+      height: 200px;
+      padding-right: 240px;
+      margin-right: 0;
+  }
+  #feature-version .feature-version-box2,   #feature-version .feature-version-box4 {
+      height: 200px;
+      padding-bottom: 60px;
+      padding-left: 240px;
+  }
+  #feature-version .feature-version-box1 {
+  padding-bottom: 40px;
+    background: url('../images/FutureVersion1@720.png') right 30px no-repeat;
+  }
+  #feature-version .feature-version-box2 {
+    background: url('../images/FutureVersion2@720.png') left 30px no-repeat;
+  }
+  #feature-version .feature-version-box3 {
+    padding-right: 270px;
+    padding-bottom: 80px;
+    background: url('../images/FutureVersion3@720.png') right 30px no-repeat;
+  }
+  #feature-version .feature-version-box4 {
+    background: url('../images/FutureVersion4@720.png') left 30px no-repeat;
+  }
+
+  /**application**/
+  .application-box {
+    width: 720px;
+  }
+  #application {
+    padding: 24px 0;
+  }
+  #application li {
+    padding: 0 15px;
+  }
+  #application li .title {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+  #application li .img {
+    width: 210px;
+    height: 210px;
+  }
+  #application li .img1 {
+    background-image: url('../images/Application1@720.png')
+  }
+  #application li .img2 {
+    background-image: url('../images/Application2@720.png')
+  }
+  #application li .img3 {
+    background-image: url('../images/Application3@720.png')
+  }
+
+  /**roadmap**/
+  #roadmap {
+    width: 720px;
+  }
+  #roadmap .title {
+    font-size: 16px;
+  }
+  #roadmap .roadmap-item {
+    width: 302px;
+  }
+  #roadmap .roadmap-item-left {
+    padding-right: 70px;
+  }
+  #roadmap .roadmap-item-right {
+    padding-left: 68px;
+  }
+  #roadmap .roadmap-item-left .title, #roadmap .roadmap-item-right .title {
+    font-size: 16px;
+    line-height: 36px;
+    padding-bottom: 0;
+  }
+  #roadmap .roadmap-box {
+    padding-top: 30px;
+    background: url("../images/Roadmap1@720.png") center top no-repeat;
+  }
+  .roadmapDot {
+    width: 22px;
+    height: 22px;
+    top:10px;
+  }
+  #roadmap .roadmap-item-left .Roadmap2, #roadmap .roadmap-item-right .Roadmap2 {
+    background: url("../images/Roadmap2@720.png") center center no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap3,#roadmap .roadmap-item-right .Roadmap3 {
+    background: url("../images/Roadmap3@720.png") center center no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap4,#roadmap .roadmap-item-right .Roadmap4 {
+    background: url("../images/Roadmap4@720.png") center center no-repeat;
+  }
+  #roadmap .roadmap-item-left .Roadmap5,#roadmap .roadmap-item-right .Roadmap5 {
+    background: url("../images/Roadmap5@720.png") center center no-repeat;
+  }
+  .continued {
+    margin-bottom: 42px;
+  }
+  /**Executive Team**/
+  #executive li {
+    margin-bottom: 30px;
+  }
+  #executive li .box-left {
+    width: 110px;
+  }
+  #executive li .box-left .img img {
+    width: 110px;
+    height: 140px;
+  }
+  #executive li .box-right {
+    padding-top: 36px;
+    padding-left: 110px;
+  }
+  #executive li .box-right .title {
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    border-bottom: 2px #92a6ed solid;
+  }
+  #executive li .box-right h3 {
+    font-size: 24px;
+    padding-bottom: 16px;
+  }
+  .dot-box {
+    line-height: 20px;
+  }
+  .dot {
+    margin-left: 8px;
+  }
+  .dot1 {
+    width: 16px;
+    height: 16px;
+  }
+  .dot2 {
+    width: 14px;
+    height: 14px;
+  }
+
+  /**advisors**/
+  #advisors li {
+    width: 350px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+  #advisors li .img img {
+    width: 350px;
+    height: 280px;
+  }
+  #advisors li .dot {
+    margin-right: 8px;
+  }
+  #advisors li .title {
+    font-size: 16px;
+    line-height:48px;
+  }
+  #advisors li:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  /**contactus**/
+  .contactus {
+    padding: 36px 0;
+  }
+  .contactus .title {
+    font-size: 22px;
+  }
+  .contactus .contactus-box-left {
+    float: none;
+  }
+  .contactus .contactus-map {
+    float: none;
+    width: 480px;
+    height: 300px;
+  }
+  .contactus .contactus-box-left .contactus-box-item {
+    font-size: 24px;
+  }
+  .contactus .contactus-map {
+    width: 680px;
+    height: 460px;
+  }
+  .contactus .contactus-box-left .contactus-box-item {
+    margin-bottom: 20px;
+  }
+
+  /** other **/
+  input[type="text"], textarea {
+    font-size: 16px;
+  }
+  input[type="text"] {
+    height: 48px;
+    line-height: 48px;
+    padding-left: 20px;
+  }
+  textarea {
+    line-height: 32px;
+    height: 128px;
+    width: 560px;
+  }
+  .inputText1, .inputText2 {
+    width: 185px;
+  }
+  .inputText {
+    width: 402px;
+  }
+  .contactus-btn {
+    width: 118px;
+    line-height: 41px;
+    font-size: 16px;
+    height: 41px;
+    background: url("../images/Bottom2@720.png") center center no-repeat;
+  }
+
+  /**Footer**/
+  .footer {
+    padding: 40px 0 10px;
+  }
+  .footer .footer-left{
+    width: 360px;
+  }
+.footer .footer-right  {
+  width: 240px;
+}
+  .copyright {
+    padding-bottom: 24px;
+  }
+  .footer .footer-left .title, .footer .footer-right .title {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .footer #contact-icon {}
+  .footer #contact-icon span.icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+  }
+  .footer #contact-icon span.icon1 {
+    background: url("../images/Facebook@720.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon2 {
+    background: url("../images/Twitter@720.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon3 {
+    background: url("../images/Medium@720.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon4 {
+    background: url("../images/Email@720.png") center center no-repeat
+  }
+  .footer #contact-icon span.icon5 {
+    background: url("../images/Telegram@720.png") center center no-repeat
+  }
 }

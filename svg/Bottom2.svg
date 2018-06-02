@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="315px" height="110px" viewBox="0 0 315 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Bottom2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="24.4211388%" y1="7.45811097%" x2="88.6439959%" y2="88.5387826%" id="linearGradient-1">
+            <stop stop-color="#8376ED" offset="0%"></stop>
+            <stop stop-color="#6E78F4" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="456" y="820" width="285" height="80" rx="40"></rect>
+        <filter x="-8.2%" y="-26.9%" width="116.5%" height="158.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.74287826   0 0 0 0 0.372593119   0 0 0 0 1  0 0 0 0.480553668 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2-Copy-2" transform="translate(-441.000000, -807.000000)">
+            <g id="Bottom2">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

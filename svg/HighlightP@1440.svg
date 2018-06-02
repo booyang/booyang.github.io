@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>HighlightP@1440</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="HighlightP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval-12" fill="#EFEFEF" cx="250.5" cy="250.5" r="182.5"></circle>
+        <rect id="Rectangle-30-Copy" stroke="#FF6969" stroke-width="9" x="98.5" y="146.5" width="64" height="89" rx="32"></rect>
+        <rect id="Rectangle-27" stroke="#5F65A5" stroke-width="9" fill="#FF6969" x="155.5" y="179.5" width="197" height="39"></rect>
+        <rect id="Rectangle-27-Copy" stroke="#5F65A5" stroke-width="9" fill="#92A6ED" x="155.5" y="278.5" width="197" height="43"></rect>
+        <rect id="Rectangle-26" stroke="#5F65A5" stroke-width="9" fill="#FFFFFF" x="121.5" y="119.5" width="264" height="62" rx="11"></rect>
+        <rect id="Rectangle-30" stroke="#92A6ED" stroke-width="9" x="344.5" y="255.5" width="64" height="89" rx="32"></rect>
+        <rect id="Rectangle-26-Copy" stroke="#5F65A5" stroke-width="9" fill="#FFFFFF" x="121.5" y="218.5" width="264" height="62" rx="11"></rect>
+        <rect id="Rectangle-26-Copy-2" stroke="#5F65A5" stroke-width="9" fill="#FFFFFF" x="121.5" y="317.5" width="264" height="62" rx="11"></rect>
+        <rect id="Rectangle-28" stroke="#5F65A5" stroke-width="8" x="163" y="158" width="72" height="24" rx="8"></rect>
+        <rect id="Rectangle-28-Copy" stroke="#5F65A5" stroke-width="8" x="163" y="257" width="72" height="24" rx="8"></rect>
+        <rect id="Rectangle-28-Copy-2" stroke="#5F65A5" stroke-width="8" x="163" y="356" width="72" height="24" rx="8"></rect>
+        <path d="M279.5,150.5 L322.5,150.5" id="Line" stroke="#5F65A5" stroke-width="9" stroke-linecap="round"></path>
+        <path d="M278.488638,250.5 L322.5,250.5" id="Line-Copy" stroke="#5F65A5" stroke-width="9" stroke-linecap="round"></path>
+        <path d="M278.454569,348.5 L322.5,348.5" id="Line-Copy-2" stroke="#5F65A5" stroke-width="9" stroke-linecap="round"></path>
+        <path d="M268.5,379.5 L441.51156,379.5" id="Line-Copy-3" stroke="#5F65A5" stroke-width="9" stroke-linecap="round"></path>
+        <path d="M62.5,379.5 L95.5,379.5" id="Line-Copy-4" stroke="#5F65A5" stroke-width="9" stroke-linecap="round"></path>
+        <path d="M67.8965517,319.896552 L67.8965517,316.103448 C67.8965517,314.389461 69.2860128,313 71,313 C72.7139872,313 74.1034483,314.389461 74.1034483,316.103448 L74.1034483,319.896552 L77.8965517,319.896552 C79.6105389,319.896552 81,321.286013 81,323 C81,324.713987 79.6105389,326.103448 77.8965517,326.103448 L74.1034483,326.103448 L74.1034483,329.896552 C74.1034483,331.610539 72.7139872,333 71,333 C69.2860128,333 67.8965517,331.610539 67.8965517,329.896552 L67.8965517,326.103448 L64.1034483,326.103448 C62.3894611,326.103448 61,324.713987 61,323 C61,321.286013 62.3894611,319.896552 64.1034483,319.896552 L67.8965517,319.896552 Z" id="Combined-Shape" fill="#616161"></path>
+        <path d="M376.896552,74.8965517 L376.896552,71.1034483 C376.896552,69.3894611 378.286013,68 380,68 C381.713987,68 383.103448,69.3894611 383.103448,71.1034483 L383.103448,74.8965517 L386.896552,74.8965517 C388.610539,74.8965517 390,76.2860128 390,78 C390,79.7139872 388.610539,81.1034483 386.896552,81.1034483 L383.103448,81.1034483 L383.103448,84.8965517 C383.103448,86.6105389 381.713987,88 380,88 C378.286013,88 376.896552,86.6105389 376.896552,84.8965517 L376.896552,81.1034483 L373.103448,81.1034483 C371.389461,81.1034483 370,79.7139872 370,78 C370,76.2860128 371.389461,74.8965517 373.103448,74.8965517 L376.896552,74.8965517 Z" id="Combined-Shape-Copy" fill="#616161" transform="translate(380.000000, 78.000000) rotate(45.000000) translate(-380.000000, -78.000000) "></path>
+        <circle id="Oval-13" fill="#FF6969" cx="347.5" cy="150.5" r="7.5"></circle>
+        <circle id="Oval-13-Copy-3" fill="#616161" cx="88.5" cy="99.5" r="7.5"></circle>
+        <circle id="Oval-13-Copy-4" fill="#616161" cx="365.5" cy="416.5" r="3.5"></circle>
+        <circle id="Oval-13-Copy" fill="#5F65A5" cx="347.5" cy="250.5" r="7.5"></circle>
+        <circle id="Oval-13-Copy-2" fill="#92A6ED" cx="347.5" cy="348.5" r="7.5"></circle>
+        <rect id="Rectangle-29" fill="#5F65A5" x="167" y="137" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-3" fill="#5F65A5" x="167" y="234" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-6" fill="#5F65A5" x="167" y="333" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy" fill="#5F65A5" x="195" y="137" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-4" fill="#5F65A5" x="195" y="234" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-7" fill="#5F65A5" x="195" y="333" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-2" fill="#5F65A5" x="223" y="137" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-5" fill="#5F65A5" x="222" y="234" width="9" height="9"></rect>
+        <rect id="Rectangle-29-Copy-8" fill="#5F65A5" x="222" y="333" width="9" height="9"></rect>
+    </g>
+</svg>

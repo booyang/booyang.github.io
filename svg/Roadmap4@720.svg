@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Roadmap4@720</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="960" cy="10029" r="15"></circle>
+        <filter x="-70.0%" y="-70.0%" width="240.0%" height="240.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="7" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.266666667   0 0 0 0 1   0 0 0 0 0.709803922  0 0 0 0.502377717 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2-Copy-2" transform="translate(-931.000000, -10000.000000)">
+            <g id="Roadmap4">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#44FFB5" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
