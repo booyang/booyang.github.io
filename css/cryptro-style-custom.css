@@ -204,7 +204,7 @@ body.cryptro-boxed .cryptro-body-wrapper{ margin-top: 0px; margin-bottom: 0px; }
 .cryptro-header-style-bar .cryptro-logo-right-text{ padding-top: 30px; }
 .cryptro-logo{ padding-top: 56px; }
 .cryptro-logo{ padding-bottom: 5px; }
-.cryptro-logo-inner{ max-width: 230px; }
+.cryptro-logo-inner{ max-width: 100px; }
 .cryptro-navigation{ padding-top: 76px; }.cryptro-navigation-top{ top: 76px; }
 .cryptro-navigation .sf-menu > li > a{ padding-bottom: 5px; }
 .cryptro-navigation .cryptro-main-menu{ padding-right: 0px; }
