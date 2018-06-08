@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#filter-2);}
+	.st1{fill:#FCF3A4;}
+	.st2{fill:#F8E71C;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="240.0%" id="filter-2" width="240.0%" x="-70.0%" y="-70.0%">
+	<feMorphology  in="SourceAlpha" operator="dilate" radius="7" result="shadowSpreadOuter1"></feMorphology>
+	<feOffset  dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+	
+		<feColorMatrix  in="shadowOffsetOuter1" type="matrix" values="0 0 0 0 0.97254902   0 0 0 0 0.905882353   0 0 0 0 0.109803922  0 0 0 0.499575408 0">
+		</feColorMatrix>
+</filter>
+<title>Roadmap5</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="Artboard-2-Copy-2" transform="translate(-931.000000, -10300.000000)">
+		<g id="Roadmap5">
+			<g class="st0">
+				<circle id="path-1_2_" cx="960" cy="10329" r="15"/>
+			</g>
+		</g>
+	</g>
+</g>
+<circle class="st1" cx="29" cy="29" r="28.7"/>
+<g>
+	<circle id="path-1_1_" class="st2" cx="29" cy="29" r="15"/>
+</g>
+</svg>
