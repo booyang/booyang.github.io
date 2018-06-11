@@ -301,7 +301,7 @@ body.single-post .cryptro-sidebar-style-none, body.blog .cryptro-sidebar-style-n
 .cryptro-navigation-background{ background-color: #f4f4f4; }
 .cryptro-navigation .cryptro-navigation-slide-bar{ border-color: #ffffff; }.cryptro-navigation-bar-wrap .cryptro-navigation-slide-bar{ background-color: #ffffff; }
 .sf-menu > li > a, .sf-vertical > li > a{ color: #818181; }.cryptro-main-menu-right-wrap .cryptro-dropdown-wpml-flag{ color: #818181; }
-.sf-menu > li > a:hover, .sf-menu > li.current-menu-item > a, .sf-menu > li.current-menu-ancestor > a, .sf-vertical > li > a:hover, .sf-vertical > li.current-menu-item > a, .sf-vertical > li.current-menu-ancestor > a{ color: #1e63da; }
+.sf-menu > li > a:hover, .sf-menu > li.current-menu-item > a, .sf-menu > li.current-menu-ancestor > a, .sf-vertical > li > a:hover, .sf-vertical > li.current-menu-item > a, .sf-vertical > li.current-menu-ancestor > a{ color: #FF8A54; }
 .sf-menu > .cryptro-normal-menu li, .sf-menu > .cryptro-mega-menu > .sf-mega, .sf-vertical ul.sub-menu li, ul.sf-menu > .menu-item-language li{ background-color: #161616; }
 .sf-menu > li > .sub-menu a, .sf-menu > .cryptro-mega-menu > .sf-mega a, .sf-vertical ul.sub-menu li a{ color: #969696; }
 .sf-menu > li > .sub-menu a:hover, .sf-menu > li > .sub-menu .current-menu-item > a, .sf-menu > li > .sub-menu .current-menu-ancestor > a, .sf-menu > .cryptro-mega-menu > .sf-mega a:hover, .sf-menu > .cryptro-mega-menu > .sf-mega .current-menu-item > a, .sf-vertical > li > .sub-menu a:hover, .sf-vertical > li > .sub-menu .current-menu-item > a, .sf-vertical > li > .sub-menu .current-menu-ancestor > a{ color: #ffffff; }
