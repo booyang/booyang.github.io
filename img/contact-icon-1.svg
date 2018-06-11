@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>contact-icon-1 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#41A9F2" offset="0%"></stop>
+            <stop stop-color="#78A9FE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M19.979842,21.1915252 L13.4756083,21.1810628 C13.1442378,21.1805298 12.8760411,20.9114688 12.8765742,20.5800984 C12.876939,20.3532801 13.0051772,20.1460551 13.2080044,20.0445277 L27.4131485,12.9339848 C27.709469,12.7856583 28.0699267,12.9056311 28.2182533,13.2019517 C28.3027267,13.3707092 28.3028796,13.5693764 28.2186659,13.7382637 L21.1167905,27.9808023 C20.9689201,28.2773507 20.6086474,28.3978781 20.312099,28.2500077 C20.108507,28.148489 19.979842,27.9405581 19.979842,27.7130592 L19.979842,21.1915252 Z" id="Path" stroke="#335EE2" fill="#335EE2"></path>
+        <circle id="Oval" stroke="url(#linearGradient-1)" stroke-width="2" cx="20.5" cy="20.5" r="19.5"></circle>
+    </g>
+</svg>
